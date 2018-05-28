@@ -4,13 +4,34 @@ using UnityEngine;
 
 public class Character : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    Health health;
+    Weapon[] weapons;
+    int equippedSpell;
+
+  
+    void Attack()
+    {
+        Attack(0);
+    }
+
+    void Attack(int equippedSpell)
+    {
+      //weapons[equippedSpell].attack;
+    }
+
+  public virtual void Move()
+    {
+
+    }
+    
+    void GetHit()
+    {
+        //take damage, stagger and such
+    }
+
+    void DIE()
+    {
+
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

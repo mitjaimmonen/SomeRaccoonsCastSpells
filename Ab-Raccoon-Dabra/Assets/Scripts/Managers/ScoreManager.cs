@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    float currentScore;
+    int totalEnemiesKilled;
+
+    public void addToScore(int value)
+    {
+        currentScore += value;
+    }
+
+    public void clearScore()
+    {
+        currentScore = 0;
+    }
+
+    public void saveScore()
+    {
+        //save score to player prefs!
+    }
+
+    public void readScore()
+    {
+        //read score from player prefs
+    }
+
 }
