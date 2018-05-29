@@ -7,24 +7,29 @@ public class ScoreManager : MonoBehaviour {
     float currentScore;
     int totalEnemiesKilled;
 
-    public void addToScore(int value)
+    public void AddToScore(int value)
     {
         currentScore += value;
     }
 
-    public void clearScore()
+    public void ClearScore()
     {
         currentScore = 0;
     }
 
-    public void saveScore()
+    public void SaveScore()
     {
         //save score to player prefs!
     }
 
-    public void readScore()
+    public void ReadScore()
     {
         //read score from player prefs
+    }
+
+    public void KilledEnemý()
+    {
+        totalEnemiesKilled++;
     }
 
 }
