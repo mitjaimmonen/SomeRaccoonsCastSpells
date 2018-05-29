@@ -4,14 +4,19 @@ using UnityEngine;
 using XInputDotNetPure; // Required in C#
 
 public class InputManager : MonoBehaviour {
-		public PlayerController playerController;
+		public Player player;
         bool playerIndexSet = false;
         PlayerIndex playerIndex;
         GamePadState state;
         GamePadState prevState;
 	// Use this for initialization
 	void Start () {
-		
+		if (!player)
+        {
+            var go = GameObject.FindGameObjectWithTag("Player");
+            if (go)
+                player = go.GetComponent<Player>();
+        }
 	}
 
     public void Update()
@@ -35,7 +40,7 @@ public class InputManager : MonoBehaviour {
 
         prevState = state;
         state = GamePad.GetState(playerIndex);
-        playerController.HandleInput(state, prevState);
+        player.HandleInput(state, prevState);
     }
 
 }

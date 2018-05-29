@@ -5,9 +5,11 @@ using UnityEngine;
 public class Weapon_Spell_Blast : Weapon_Spell {
 
 
-	[Range(0.01f,10f), Tooltip("Projectile range until destroyed")]
+	[Tooltip("Projectile range until destroyed")]
 	public float range;
-
+	public float projectileSpeed;
+	public float projectileSizeMultiplier;
+	public float projectileBlastMultiplier;
 	public GameObject projectilePrefab;
 	public GameObject blastPrefab;
 
@@ -16,11 +18,20 @@ public class Weapon_Spell_Blast : Weapon_Spell {
 	{
 		base.Attack();
 
+		if (fireRateTimer > Time.time - fireRate)
+			return;
 		
-		//Instantiate projectile
-		//Give projectile its variables
-		//Launch projectile forward
-		//Give projectile the blastPrefab
+		fireRateTimer = Time.time;
+
+		
+		GameObject currentProjectilego = Instantiate(projectilePrefab, muzzle.position, playerTrans.rotation);
+		Projectile_Blast currentProjectile = currentProjectilego.GetComponent<Projectile_Blast>();
+		currentProjectile.damage = damage;
+		currentProjectile.destroyTime = destroyTime;
+		currentProjectile.range = range;
+		currentProjectile.speed = projectileSpeed;
+		currentProjectile.sizeMultiplier = projectileSizeMultiplier;
+		currentProjectile.blastMultiplier = projectileBlastMultiplier;
 
 	}
 

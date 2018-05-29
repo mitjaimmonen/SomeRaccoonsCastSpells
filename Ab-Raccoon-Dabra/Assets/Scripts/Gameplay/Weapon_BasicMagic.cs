@@ -5,9 +5,10 @@ using UnityEngine;
 public class Weapon_BasicMagic : Weapon {
 
 
-	[Range(0.01f,10f), Tooltip("Projectile range until destroyed")]
+	[Tooltip("Projectile range until destroyed")]
 	public float range;
-
+	public float projectileSpeed;
+	public float projectileSizeMultiplier;
 	public GameObject projectilePrefab;
 
 
@@ -15,10 +16,18 @@ public class Weapon_BasicMagic : Weapon {
 	{
 		base.Attack();
 
+		if (fireRateTimer > Time.time - fireRate)
+			return;
 		
-		//Instantiate projectile
-		//Give projectile its variables
-		//Launch projectile forward
+		fireRateTimer = Time.time;
+		
+		GameObject currentProjectilego = Instantiate(projectilePrefab, muzzle.position, playerTrans.rotation);
+		Projectile currentProjectile = currentProjectilego.GetComponent<Projectile>();
+		currentProjectile.damage = damage;
+		currentProjectile.destroyTime = destroyTime;
+		currentProjectile.range = range;
+		currentProjectile.speed = projectileSpeed;
+		currentProjectile.sizeMultiplier = projectileSizeMultiplier;
 		
 
 	}

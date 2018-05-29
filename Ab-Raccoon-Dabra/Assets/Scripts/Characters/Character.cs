@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class Character : MonoBehaviour {
 
-    Health health;
-    Weapon[] weapons;
-    int equippedSpell;
+    protected Health health;
+    public Weapon[] weapons;
+    protected int equippedSpell = 1;
 
+    public int EquippedSpell
+    {
+        get {return equippedSpell;}
+        set
+        { 
+            if (value > weapons.Length-1 || value < 1)
+                equippedSpell = 1;
+            else
+                equippedSpell = value;
+        }
+    }
   
-    void Attack()
+    public void Attack()
     {
         Attack(0);
     }
-
-    void Attack(int equippedSpell)
+    public void Attack(int equippedSpell)
     {
-      //weapons[equippedSpell].attack;
+      weapons[equippedSpell].Attack();
     }
 
   public virtual void Move()

@@ -8,7 +8,6 @@ public class CameraController : MonoBehaviour {
         public float distance;
         public Transform target;
 		public float lerpSpeed = 10f;
-
 		private Vector3 camPos, camDir;
 
         void LateUpdate()
