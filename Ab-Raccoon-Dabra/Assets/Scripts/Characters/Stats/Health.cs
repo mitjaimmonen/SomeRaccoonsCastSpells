@@ -7,17 +7,32 @@ public class Health : MonoBehaviour {
     float maxHealth;
     float currentHealth;
 
-    public void takeDamage(float value)
+    public Health(float value)
+    {
+        maxHealth = value;
+        SetHealthToMax();
+    }
+  
+
+    public bool isAlive()
+    {
+        if (currentHealth > 0)
+            return  true;
+        else
+            return false;
+    }
+
+    public void TakeDamage(float value)
     {
         currentHealth -= value;
     }
 
-    public void heal (float value)
+    public void Heal (float value)
     {
         currentHealth += value;
     }
 
-    public void setHealthToMax()
+    public void SetHealthToMax()
     {
         currentHealth = maxHealth;
     }

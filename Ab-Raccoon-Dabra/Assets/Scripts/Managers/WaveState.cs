@@ -5,11 +5,9 @@ using UnityEngine;
 public class WaveState
 {
     //how many enemies to spawn
-    public float totalEnemies;
-    //how many enemies have been spawned
-    public float enemiesSpawned;
+    public int totalEnemies;
     //how much extra score (if any) does the player get for beating the wave
-    public float scoreBonus;
+    public int scoreBonus;
     //timer between spanws
     public float spawnTimer;
     //how long does the state last
@@ -17,9 +15,13 @@ public class WaveState
     //which wave is this?
     public int waveNumber;
 
-    public WaveState(float _enemies, float _scoreBonus, float _spawnTimer, float _waveTimer, int _waveNumber)
+    public WaveState(int _enemies, int _scoreBonus, float _spawnTimer, float _waveTimer, int _waveNumber)
     {
-        //initializes the wave with settings from stateManager based on waveNumber
+        totalEnemies = _enemies;
+        scoreBonus = _scoreBonus;
+        spawnTimer = _spawnTimer;
+        waveTimer = _waveTimer;
+        waveNumber = _waveNumber;
 
     }
 

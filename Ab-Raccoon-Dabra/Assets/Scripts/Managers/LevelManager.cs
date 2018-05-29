@@ -2,30 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : MonoBehaviour
+{
 
-    ScoreManager scoreManager;
-    StateManager stateManager;
+    public ScoreManager scoreManager;
+    public StateManager stateManager;
 
-    //event listener for enemy dying
+    public GameObject player;
 
-	// Use this for initialization
-	void Start () {
-        scoreManager.clearScore();
+    //event listener for enemy dying should be here maybe????
+
+    public float TimerForDisplay()
+    {
+        return stateManager.TimerForDisplay() + 1;
+    }
+
+
+    private void Awake()
+    {
         stateManager.StartWaves();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        checkEnemyDeath();
-        manageWaves();
+    }
+    void Start()
+    {
+        scoreManager.ClearScore();
+    }
 
-	}
-
-    void manageWaves()
+    void Update()
     {       
-        if (stateManager.currentWave.totalEnemies > stateManager.enemiesKilled /*or timer*/)
-            stateManager.ExecuteWave();
+        ManageWaves();
+
+    }
+
+    void ManageWaves()
+    {
+        if (stateManager.EnemiesLeft() && stateManager.WithinTimer())
+            stateManager.ExecuteWave(player);
         else
         {
             //adds bonus score and exits current wave
@@ -33,8 +44,12 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
-   public void checkEnemyDeath()
+    public void EnemyDeath(int scoreValue)
     {
         //called by enemy OnDestroy(), adds to score and stateManager.enemiesKilled
+        scoreManager.AddToScore(scoreValue);
+        stateManager.enemiesKilled++;
+
     }
+        
 }
