@@ -7,7 +7,6 @@ public class Enemy : Character
 
     public LevelManager gameBoss;
     public Transform target;
-    public float turnSpeed;
     public int scoreWorth = 5;
 
     [SerializeField]

@@ -354,6 +354,24 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1585062509}
+    - target: {fileID: 114305278469163786, guid: 74226c2d885daff44ad19c3970e542dd,
+        type: 2}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 1574145178825922, guid: c18301303e688c54898609fedd79c03e,
+        type: 2}
+    - target: {fileID: 114305278469163786, guid: 74226c2d885daff44ad19c3970e542dd,
+        type: 2}
+      propertyPath: moleToSpawn
+      value: 
+      objectReference: {fileID: 1574145178825922, guid: b5d95aa424cc568479cfc4d1092c3e68,
+        type: 2}
+    - target: {fileID: 114305278469163786, guid: 74226c2d885daff44ad19c3970e542dd,
+        type: 2}
+      propertyPath: batToSpawn
+      value: 
+      objectReference: {fileID: 1574991387788592, guid: 7146e6c81cc99da4f810c6bc9b42be53,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74226c2d885daff44ad19c3970e542dd, type: 2}
   m_IsPrefabParent: 0

@@ -7,8 +7,12 @@ public class StateManager : MonoBehaviour
     //how many enemies have been spawned
     public int enemiesSpawnedThisWave;
     public int enemiesKilled = 0;
-    public int enemiesSpawnedOverall;
-    public GameObject objectToSpawn;
+    private int enemiesSpawnedOverall;
+    private int batsSpawned;
+    private int molesSpawned;
+    public GameObject moleToSpawn;
+    public GameObject batToSpawn;
+
     [SerializeField]
     Transform[] spawnPositions;
 
@@ -17,7 +21,9 @@ public class StateManager : MonoBehaviour
     [Space(10)]
     [Header("Wave modifiers")]
     [SerializeField]
-    private float enemySpawnModifier = 2;
+    private float moleSpawnModifier = 2;
+    [SerializeField]
+    private float batSpawnModifier = 2;
     [SerializeField]
     private float scoreBonusModifier = 5;
     [SerializeField]
@@ -34,7 +40,7 @@ public class StateManager : MonoBehaviour
 
     public bool EnemiesLeft()
     {
-        if (enemiesKilled < enemiesSpawnedOverall || enemiesSpawnedThisWave < currentWave.totalEnemies)
+        if (enemiesKilled < enemiesSpawnedOverall || enemiesSpawnedThisWave < currentWave.TotalEnemies())
             return true;
         else
             return false;
@@ -57,13 +63,22 @@ public class StateManager : MonoBehaviour
 
     public int EnemiesToSpawn()
     {
-        return currentWave.totalEnemies - enemiesSpawnedThisWave;
+        return currentWave.TotalEnemies() - enemiesSpawnedThisWave;
+    }
+
+    public int MolesToSpawn()
+    {
+        return currentWave.totalMoles - molesSpawned;
+    }
+
+    public int BatsToSpawn()
+    {
+        return currentWave.totalBats - batsSpawned;
     }
 
     public void StartWaves()
     {
         EnterWave(0);
-
     }
 
     //the start of the wave
@@ -74,12 +89,13 @@ public class StateManager : MonoBehaviour
         enemiesSpawnedThisWave = 0;
         timerCounter = 0;
 
-        int enemies = Mathf.RoundToInt(waveNumber * enemySpawnModifier + 5);
+        int moles = Mathf.RoundToInt(waveNumber * moleSpawnModifier + 5);
+        int bats = Mathf.RoundToInt(waveNumber * batSpawnModifier);
         int scoreBonus = Mathf.RoundToInt(waveNumber * scoreBonusModifier + 5);
         float spawnTimer = standardSpawnTime;
         float waveTimer = standardWaveDuration + waveNumber * waveDurationModifier;
 
-        currentWave = new WaveState(enemies, scoreBonus, spawnTimer, waveTimer, waveNumber);
+        currentWave = new WaveState(moles, bats, scoreBonus, spawnTimer, waveTimer, waveNumber);
 
         if (currentWave != null)
         {
@@ -100,7 +116,24 @@ public class StateManager : MonoBehaviour
             {
                 int maxEnemiesToSpawn = Mathf.Min(EnemiesToSpawn(), maxEnemiesPerSpawn);
                 int amountOfEnemies = Random.Range(1, maxEnemiesToSpawn);
-                SpawnEnemies(amountOfEnemies, player);
+                if (BatsToSpawn() > 0)
+                {
+                    if (MolesToSpawn() > 0)
+                    {
+                        int maxBatsToSpawn = Mathf.Min(BatsToSpawn(), maxEnemiesToSpawn);
+                        int amountOfBats = Random.Range(1, maxBatsToSpawn);
+                        SpawnBats(amountOfBats, player);
+                        amountOfEnemies -= amountOfBats;
+                        if (amountOfEnemies > 0)
+                            SpawnMoles(amountOfEnemies, player);
+                    }
+
+                    else
+                        SpawnBats(amountOfEnemies, player);
+                }
+
+                else
+                    SpawnMoles(amountOfEnemies, player);
             }
         }
 
@@ -109,16 +142,33 @@ public class StateManager : MonoBehaviour
 
     }
 
-    void SpawnEnemies(int value, GameObject playerPos)
+    void SpawnMoles(int value, GameObject playerPos)
     {
         for (int i = 0; i < value; i++)
         {
             int randomPosition = Random.Range(0, spawnPositions.Length);
-            objectToSpawn.GetComponent<Enemy>().target = playerPos.transform;
-            objectToSpawn.GetComponent<Enemy>().gameBoss = GetComponent<LevelManager>();
+            moleToSpawn.GetComponent<Enemy>().target = playerPos.transform;
+            moleToSpawn.GetComponent<Enemy>().gameBoss = GetComponent<LevelManager>();
 
-            Instantiate(objectToSpawn, spawnPositions[randomPosition].position, spawnPositions[randomPosition].rotation);
+            Instantiate(moleToSpawn, spawnPositions[randomPosition].position, spawnPositions[randomPosition].rotation);
             spawnCounter = 0;
+            molesSpawned++;
+            enemiesSpawnedThisWave++;
+        }
+        enemiesSpawnedOverall++;
+    }
+
+    void SpawnBats(int value, GameObject playerPos)
+    {
+        for (int i = 0; i < value; i++)
+        {
+            int randomPosition = Random.Range(0, spawnPositions.Length);
+            batToSpawn.GetComponent<Enemy>().target = playerPos.transform;
+            batToSpawn.GetComponent<Enemy>().gameBoss = GetComponent<LevelManager>();
+
+            Instantiate(batToSpawn, spawnPositions[randomPosition].position, spawnPositions[randomPosition].rotation);
+            spawnCounter = 0;
+            batsSpawned++;
             enemiesSpawnedThisWave++;
         }
         enemiesSpawnedOverall++;
