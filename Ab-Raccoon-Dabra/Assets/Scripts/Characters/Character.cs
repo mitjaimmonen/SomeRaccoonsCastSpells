@@ -35,7 +35,7 @@ public class Character : MonoBehaviour
 
     }
 
-    void GetHit(float dmgValue)
+    public void GetHit(float dmgValue)
     {
         //take damage, stagger and such
         health.TakeDamage(dmgValue);

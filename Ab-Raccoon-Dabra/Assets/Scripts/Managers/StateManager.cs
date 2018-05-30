@@ -14,7 +14,9 @@ public class StateManager : MonoBehaviour
     public GameObject batToSpawn;
 
     [SerializeField]
-    Transform[] spawnPositions;
+    Transform[] moleSpawnPositions;
+    [SerializeField]
+    Transform[] batSpawnPositions;
 
     public WaveState currentWave;
 
@@ -146,11 +148,11 @@ public class StateManager : MonoBehaviour
     {
         for (int i = 0; i < value; i++)
         {
-            int randomPosition = Random.Range(0, spawnPositions.Length);
+            int randomPosition = Random.Range(0, moleSpawnPositions.Length);
             moleToSpawn.GetComponent<Enemy>().target = playerPos.transform;
             moleToSpawn.GetComponent<Enemy>().gameBoss = GetComponent<LevelManager>();
 
-            Instantiate(moleToSpawn, spawnPositions[randomPosition].position, spawnPositions[randomPosition].rotation);
+            Instantiate(moleToSpawn, moleSpawnPositions[randomPosition].position, moleSpawnPositions[randomPosition].rotation);
             spawnCounter = 0;
             molesSpawned++;
             enemiesSpawnedThisWave++;
@@ -162,11 +164,11 @@ public class StateManager : MonoBehaviour
     {
         for (int i = 0; i < value; i++)
         {
-            int randomPosition = Random.Range(0, spawnPositions.Length);
+            int randomPosition = Random.Range(0, batSpawnPositions.Length);
             batToSpawn.GetComponent<Enemy>().target = playerPos.transform;
             batToSpawn.GetComponent<Enemy>().gameBoss = GetComponent<LevelManager>();
 
-            Instantiate(batToSpawn, spawnPositions[randomPosition].position, spawnPositions[randomPosition].rotation);
+            Instantiate(batToSpawn, batSpawnPositions[randomPosition].position, batSpawnPositions[randomPosition].rotation);
             spawnCounter = 0;
             batsSpawned++;
             enemiesSpawnedThisWave++;
