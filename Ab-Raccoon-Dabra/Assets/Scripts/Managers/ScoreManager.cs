@@ -1,0 +1,35 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ScoreManager : MonoBehaviour {
+
+    float currentScore;
+    int totalEnemiesKilled;
+
+    public void AddToScore(int value)
+    {
+        currentScore += value;
+    }
+
+    public void ClearScore()
+    {
+        currentScore = 0;
+    }
+
+    public void SaveScore()
+    {
+        //save score to player prefs!
+    }
+
+    public void ReadScore()
+    {
+        //read score from player prefs
+    }
+
+    public void KilledEnemý()
+    {
+        totalEnemiesKilled++;
+    }
+
+}
