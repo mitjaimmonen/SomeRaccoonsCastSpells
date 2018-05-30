@@ -13,9 +13,22 @@ public class Weapon_BasicMelee : Weapon {
 	void Start () {
 		
 	}
-	public override void Attack()
+	protected override void Attack()
 	{
 		base.Attack();
+
+
+		Collider[] enemyHits = Physics.OverlapSphere(transform.position + transform.forward*forwardMultiplier, damageRadius, layersOfEffect);
+		foreach(var hit in enemyHits)
+		{
+			Character enemy = hit.GetComponentInChildren<Character>();
+			if (!enemy)
+				enemy = hit.GetComponentInParent<Enemy>();
+			
+			enemy.AddBuff(iceBuff, stunBuff, buffTime);
+			enemy.GetHit(damage);
+
+		}
 
 		//Start Coroutine for the time of destroyTime
 		//Sphere check for enemy

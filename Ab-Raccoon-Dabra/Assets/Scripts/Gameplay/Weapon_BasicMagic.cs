@@ -12,14 +12,9 @@ public class Weapon_BasicMagic : Weapon {
 	public GameObject projectilePrefab;
 
 
-	public override void Attack()
+	protected override void Attack()
 	{
 		base.Attack();
-
-		if (fireRateTimer > Time.time - fireRate)
-			return;
-		
-		fireRateTimer = Time.time;
 		
 		GameObject currentProjectilego = Instantiate(projectilePrefab, muzzle.position, playerTrans.rotation);
 		Projectile currentProjectile = currentProjectilego.GetComponent<Projectile>();
@@ -28,6 +23,9 @@ public class Weapon_BasicMagic : Weapon {
 		currentProjectile.range = range;
 		currentProjectile.speed = projectileSpeed;
 		currentProjectile.sizeMultiplier = projectileSizeMultiplier;
+		currentProjectile.iceBuff = iceBuff;
+		currentProjectile.stunBuff = stunBuff;
+		currentProjectile.buffTime = buffTime;
 		
 
 	}

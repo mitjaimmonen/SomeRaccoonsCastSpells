@@ -27,7 +27,11 @@ public class Enemy : Character
 
     public override void Move()
     {
-         navMeshAgent.SetDestination(target.position);
+        if (!iceBuff && !stunBuff)
+            navMeshAgent.SetDestination(target.position);
+        else
+            navMeshAgent.SetDestination(transform.position);
+        
     }
 
     private void Update()

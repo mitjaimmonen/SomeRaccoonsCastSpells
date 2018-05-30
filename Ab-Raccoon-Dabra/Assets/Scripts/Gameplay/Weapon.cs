@@ -9,8 +9,8 @@ public class Weapon : MonoBehaviour {
 	public float fireRate;
 	[Tooltip("Time until projectile/collisionCheck is destroyed.")]
 	public float destroyTime;
-	[Tooltip("Can weapon be shot continuously as autoshoot/held down.")]
-	public bool isContinuous = false;
+	public bool iceBuff, stunBuff;
+	public float buffTime;
 
 	public LayerMask layersOfEffect;
 
@@ -20,7 +20,19 @@ public class Weapon : MonoBehaviour {
 	protected bool isOnCooldown = false;
 
 	protected float fireRateTimer = -10f;
+	
 
+
+	public float CooldownTime
+	{
+		get {
+			float temp = 1 - (fireRate - (Time.time - fireRateTimer))/fireRate;
+			if (temp <0)
+				temp = 0;
+			
+			return temp;
+		}
+	}
 	// Use this for initialization
 	protected virtual void Awake () {
 		//Check for references and variables
@@ -39,9 +51,19 @@ public class Weapon : MonoBehaviour {
 			
 	}
 
-	public virtual void Attack()
+	public virtual void TryAttack()
 	{
-		//attack in overrides
+		//attack in overrides		
+		if (fireRateTimer > Time.time - fireRate)
+			return;
+		
+		fireRateTimer = Time.time;
+		Attack();
+	}
+
+	protected virtual void Attack()
+	{
+
 	}
 
 }

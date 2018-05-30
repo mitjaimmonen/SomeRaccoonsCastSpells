@@ -176,7 +176,7 @@ MonoBehaviour:
   target: {fileID: 0}
   turnSpeed: 0.3
   scoreWorth: 5
-  maxHealth: 5
+  maxHealth: 60
 --- !u!136 &136700998598030970
 CapsuleCollider:
   m_ObjectHideFlags: 1

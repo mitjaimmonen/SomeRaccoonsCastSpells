@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Weapon_Spell_Blast : Weapon_Spell {
 
+	public float blastDamage;
 
 	[Tooltip("Projectile range until destroyed")]
 	public float range;
@@ -14,14 +15,10 @@ public class Weapon_Spell_Blast : Weapon_Spell {
 	public GameObject blastPrefab;
 
 	
-	public override void Attack()
+	protected override void Attack()
 	{
 		base.Attack();
 
-		if (fireRateTimer > Time.time - fireRate)
-			return;
-		
-		fireRateTimer = Time.time;
 
 		
 		GameObject currentProjectilego = Instantiate(projectilePrefab, muzzle.position, playerTrans.rotation);
@@ -32,6 +29,11 @@ public class Weapon_Spell_Blast : Weapon_Spell {
 		currentProjectile.speed = projectileSpeed;
 		currentProjectile.sizeMultiplier = projectileSizeMultiplier;
 		currentProjectile.blastMultiplier = projectileBlastMultiplier;
+		currentProjectile.blastDamage = blastDamage;
+		currentProjectile.buffTime = buffTime;
+		currentProjectile.stunBuff = stunBuff;
+		currentProjectile.iceBuff = iceBuff;
+		currentProjectile.blastDamage = blastDamage;
 
 	}
 

@@ -26,17 +26,11 @@ public class Weapon_Spell_Lightning : Weapon_Spell {
 		
 	}
 	
-	public override void Attack()
+	protected override void Attack()
 	{
 		base.Attack();
 
 
-		if (fireRateTimer > Time.time - fireRate)
-			return;
-		
-		fireRateTimer = Time.time;
-
-		// List<GameObject> affectedEnemies = new List<GameObject>();
 		List<Collider> hits = new List<Collider>();
 		//Check all affected enemies with sphere checks
 		// RaycastHit hit;
@@ -56,7 +50,15 @@ public class Weapon_Spell_Lightning : Weapon_Spell {
 				line.SetPositions(points);
 				Destroy(line.gameObject, 0.1f);
 				//Deal damage to spherehit
-				
+				Enemy enemy = hit.collider.GetComponentInChildren<Enemy>();
+				if (!enemy)
+					enemy = hit.collider.GetComponentInParent<Enemy>();
+				if (enemy)
+				{
+					enemy.AddBuff(iceBuff, stunBuff, buffTime);
+					enemy.GetHit(damage);
+				}
+
 				hits.Add(hit.collider);
 
 			}
@@ -82,8 +84,12 @@ public class Weapon_Spell_Lightning : Weapon_Spell {
 						LineRenderer line = Instantiate(linerenderer, playerTrans.position, playerTrans.rotation);
 						line.SetPositions(points);
 						Destroy(line.gameObject, 0.1f);
-						//Draw lightning line between spherehit & spherehit2
-						//Deal damage to spherehit2
+
+						Enemy enemy = spherehit2.GetComponentInChildren<Enemy>();
+						if (!enemy)
+							enemy = spherehit2.GetComponentInParent<Enemy>();
+						enemy.AddBuff(iceBuff, stunBuff, buffTime);
+						enemy.GetHit(damage);
 						hits.Add(spherehit2);
 
 					}
@@ -101,13 +107,7 @@ public class Weapon_Spell_Lightning : Weapon_Spell {
 			LineRenderer line = Instantiate(linerenderer, playerTrans.position, playerTrans.rotation);
 			line.SetPositions(points);
 			Destroy(line.gameObject, 0.1f);
+		
 		}
-
-		foreach (var enemy in hits)
-			Destroy(enemy.gameObject, 0.1f);
-		// Debug.Log(hits.Count);
-		//Deal damage on enemies
-		//Spawn visuals
-
 	}
 }

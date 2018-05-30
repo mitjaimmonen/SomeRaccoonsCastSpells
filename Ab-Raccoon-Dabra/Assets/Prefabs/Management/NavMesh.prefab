@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1798711276599050}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -20.392769, y: 1.24, z: 9.713301}
+  m_LocalPosition: {x: -20.392769, y: -0.6, z: 9.713301}
   m_LocalScale: {x: 1.288091, y: 2.46188, z: 5.3335066}
   m_Children: []
   m_Father: {fileID: 0}
@@ -67,4 +67,4 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: a7582a29ca1f164409b3f8714410a0a3, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: ba58be7c04aa17345bfa7ac30b069ecb, type: 2}

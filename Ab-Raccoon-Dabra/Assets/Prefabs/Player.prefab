@@ -75,6 +75,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1585041800942764
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4949674349497752}
+  - component: {fileID: 114787441681068824}
+  m_Layer: 9
+  m_Name: Weapon BasicMelee
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1589422831728496
 GameObject:
   m_ObjectHideFlags: 1
@@ -117,9 +133,24 @@ GameObject:
   - component: {fileID: 4297599388191552}
   - component: {fileID: 33789027223299270}
   - component: {fileID: 23483099018341892}
-  - component: {fileID: 65369830114042956}
   m_Layer: 9
   m_Name: Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1908121783130966
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4114334720680914}
+  - component: {fileID: 114269374859281420}
+  m_Layer: 9
+  m_Name: Weapon Spell Eruption Icicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,6 +173,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4114334720680914
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908121783130966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4621566501683974}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4297599388191552
 Transform:
   m_ObjectHideFlags: 1
@@ -195,7 +239,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4621566501683974}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4620267121442750
 Transform:
@@ -222,8 +266,10 @@ Transform:
   m_Children:
   - {fileID: 4297599388191552}
   - {fileID: 4631898631098792}
+  - {fileID: 4949674349497752}
   - {fileID: 4604204678677734}
   - {fileID: 4890413948744956}
+  - {fileID: 4114334720680914}
   m_Father: {fileID: 4533803710640188}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 37.643, y: 0, z: 0}
@@ -251,7 +297,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4621566501683974}
-  m_RootOrder: 3
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4949674349497752
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585041800942764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4621566501683974}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23483099018341892
 MeshRenderer:
@@ -352,18 +411,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65369830114042956
-BoxCollider:
+--- !u!114 &114269374859281420
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1774845191014908}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 1908121783130966}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7028e70ebdb3f409c03b49cd8e361d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  fireRate: 5
+  destroyTime: 1
+  iceBuff: 1
+  stunBuff: 0
+  buffTime: 5
+  layersOfEffect:
+    serializedVersion: 2
+    m_Bits: 1024
+  spellIcon: {fileID: 21300000, guid: ee5e2a217c746404495c51cf4bd4262a, type: 3}
+  spellName: Ice Wall
+  icicleEruptionPrefab: {fileID: 1244212185694730, guid: 0761813890247c84b963d74b9dd388de,
+    type: 2}
+  icicleSizeMultiplier: 7
 --- !u!114 &114387191841214722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -378,14 +450,19 @@ MonoBehaviour:
   damage: 50
   fireRate: 5
   destroyTime: 3
-  isContinuous: 0
+  iceBuff: 0
+  stunBuff: 0
+  buffTime: 0
   layersOfEffect:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
+  spellIcon: {fileID: 21300000, guid: ecdf1385fc8315f4a969c7c17c7c74e8, type: 3}
+  spellName: Fire Blast
+  blastDamage: 40
   range: 15
   projectileSpeed: 8
   projectileSizeMultiplier: 4
-  projectileBlastMultiplier: 5
+  projectileBlastMultiplier: 7
   projectilePrefab: {fileID: 1664009920811592, guid: 06817976b86dc994b968d195352bc544,
     type: 2}
   blastPrefab: {fileID: 1555609483969404, guid: d6a483257a8eb874398cad8b2224d4f5,
@@ -405,9 +482,12 @@ MonoBehaviour:
   - {fileID: 114874292399375582}
   - {fileID: 114683993738313142}
   - {fileID: 114387191841214722}
+  - {fileID: 114269374859281420}
+  maxHealth: 0
   movementSpeed: 15
   movementDeadzone: 0.05
   rotationDeadzone: 0.05
+  playerCollider: {fileID: 136752758876977428}
 --- !u!114 &114683993738313142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -419,19 +499,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2016e4a51ec00894c8da3a6e7fb967d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 10
   fireRate: 2.5
   destroyTime: 0.1
-  isContinuous: 0
+  iceBuff: 0
+  stunBuff: 1
+  buffTime: 1
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 1024
-  hops: 3
+  spellIcon: {fileID: 21300000, guid: 5524419a87263784491e9e715f46f14c, type: 3}
+  spellName: Thunder
+  hops: 5
   hopRadius: 10
   effectArea: 2.64
-  radiusMultiplier: 0.5
+  radiusMultiplier: 0.8
   linerenderer: {fileID: 120513921333733774, guid: a5b3cb111b9f4fb408599dc615cc7f46,
     type: 2}
+--- !u!114 &114787441681068824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585041800942764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d78746910dbb5a46b2ca373722061f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+  fireRate: 0.59
+  destroyTime: 0
+  iceBuff: 0
+  stunBuff: 1
+  buffTime: 0.1
+  layersOfEffect:
+    serializedVersion: 2
+    m_Bits: 1024
+  damageRadius: 1
+  forwardMultiplier: 1
 --- !u!114 &114874292399375582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -443,16 +549,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d587eba84f4c184cb14ff3d88d568b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
-  fireRate: 0.5
+  damage: 10
+  fireRate: 0.2
   destroyTime: 2
-  isContinuous: 1
+  iceBuff: 0
+  stunBuff: 1
+  buffTime: 0.15
   layersOfEffect:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   range: 50
-  projectileSpeed: 15
-  projectileSizeMultiplier: 1.5
+  projectileSpeed: 20
+  projectileSizeMultiplier: 2.5
   projectilePrefab: {fileID: 1297706394114612, guid: bdd4821d553afa943974267c6fa4b514,
     type: 2}
 --- !u!136 &136752758876977428

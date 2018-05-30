@@ -9,7 +9,10 @@ public class Projectile : MonoBehaviour {
 	public float damage;
 	public float speed;
 	public float sizeMultiplier;
-
+	public LayerMask layersOfEffect;
+	
+	public bool iceBuff = false, stunBuff = false;
+	public float buffTime;
 	private GameObject particleSystemGo;
 	private Vector3 startPos;
 	private float distance;
@@ -33,10 +36,19 @@ public class Projectile : MonoBehaviour {
 		transform.position += transform.forward * speed * Time.deltaTime;
 	}
 
-	void OnCollisionEnter()
+	void OnCollisionEnter(Collision other)
 	{
 		//Deal damage
-		DestroyProjectile();
+		Debug.Log("Collision");
+		Enemy enemy = other.gameObject.GetComponentInChildren<Enemy>();
+		if (!enemy)
+			enemy = other.gameObject.GetComponentInParent<Enemy>();
+		if (enemy)
+		{
+			enemy.GetHit(damage);
+			DestroyProjectile();
+		}
+
 	}
 
 	protected virtual void DestroyProjectile()

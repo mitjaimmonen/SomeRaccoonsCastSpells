@@ -13,6 +13,7 @@ public class Player : Character {
 	public float movementDeadzone = 0.05f;
 	[Range(0.01f, 0.99f), Tooltip("Deadzone for joystick rotation (Right stick).")]
 	public float rotationDeadzone = 0.05f;
+	public CapsuleCollider playerCollider;
 
 	float moveAxisV;
 	float moveAxisH;
