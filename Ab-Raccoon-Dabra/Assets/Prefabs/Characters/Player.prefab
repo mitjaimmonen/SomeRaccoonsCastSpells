@@ -428,9 +428,14 @@ MonoBehaviour:
   iceBuff: 1
   stunBuff: 0
   buffTime: 5
+  projectileLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 1024
+  playerTrans: {fileID: 4533803710640188}
+  muzzle: {fileID: 4379863619136552}
   spellIcon: {fileID: 21300000, guid: ee5e2a217c746404495c51cf4bd4262a, type: 3}
   spellName: Ice Wall
   icicleEruptionPrefab: {fileID: 1244212185694730, guid: 0761813890247c84b963d74b9dd388de,
@@ -453,9 +458,14 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 0
   buffTime: 0
+  projectileLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 1024
+  playerTrans: {fileID: 4533803710640188}
+  muzzle: {fileID: 4379863619136552}
   spellIcon: {fileID: 21300000, guid: ecdf1385fc8315f4a969c7c17c7c74e8, type: 3}
   spellName: Fire Blast
   blastDamage: 40
@@ -464,8 +474,6 @@ MonoBehaviour:
   projectileSizeMultiplier: 4
   projectileBlastMultiplier: 7
   projectilePrefab: {fileID: 1664009920811592, guid: 06817976b86dc994b968d195352bc544,
-    type: 2}
-  blastPrefab: {fileID: 1555609483969404, guid: d6a483257a8eb874398cad8b2224d4f5,
     type: 2}
 --- !u!114 &114620580502853562
 MonoBehaviour:
@@ -483,7 +491,7 @@ MonoBehaviour:
   - {fileID: 114683993738313142}
   - {fileID: 114387191841214722}
   - {fileID: 114269374859281420}
-  maxHealth: 0
+  maxHealth: 100
   movementSpeed: 15
   movementDeadzone: 0.05
   rotationDeadzone: 0.05
@@ -505,9 +513,14 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 1
   buffTime: 1
+  projectileLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 1024
+  playerTrans: {fileID: 4533803710640188}
+  muzzle: {fileID: 4379863619136552}
   spellIcon: {fileID: 21300000, guid: 5524419a87263784491e9e715f46f14c, type: 3}
   spellName: Thunder
   hops: 5
@@ -533,9 +546,14 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 1
   buffTime: 0.1
+  projectileLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 1024
+  playerTrans: {fileID: 4533803710640188}
+  muzzle: {fileID: 4379863619136552}
   damageRadius: 1
   forwardMultiplier: 1
 --- !u!114 &114874292399375582
@@ -555,14 +573,20 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 1
   buffTime: 0.15
+  projectileLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 1024
+  playerTrans: {fileID: 4533803710640188}
+  muzzle: {fileID: 4379863619136552}
   range: 50
   projectileSpeed: 20
   projectileSizeMultiplier: 2.5
   projectilePrefab: {fileID: 1297706394114612, guid: bdd4821d553afa943974267c6fa4b514,
     type: 2}
+  projectileDestroyEffectMultiplier: 1
 --- !u!136 &136752758876977428
 CapsuleCollider:
   m_ObjectHideFlags: 1

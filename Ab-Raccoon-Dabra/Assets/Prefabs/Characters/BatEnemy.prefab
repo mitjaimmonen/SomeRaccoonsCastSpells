@@ -57,7 +57,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4769547429802698}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,9 +72,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4536093087167990}
-  - component: {fileID: 114471202601883370}
-  m_Layer: 0
-  m_Name: Weapon_BatMagic
+  - component: {fileID: 114472980529562118}
+  m_Layer: 10
+  m_Name: Weapon_BasicMagic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1757915092654586}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -219,7 +219,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280023288708530}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114471202601883370
+--- !u!114 &114472980529562118
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -227,21 +227,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1757915092654586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917c9444a38613e4dab10ee093fb5c57, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d587eba84f4c184cb14ff3d88d568b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
-  fireRate: 1
+  damage: 10
+  fireRate: 2
   destroyTime: 2
-  isContinuous: 0
+  iceBuff: 0
+  stunBuff: 1
+  buffTime: 0.1
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 512
-  range: 50
+  characterTrans: {fileID: 4994354974765064}
+  muzzle: {fileID: 4769547429802698}
+  range: 10
   projectileSpeed: 10
-  projectileSizeMultiplier: 1
-  projectilePrefab: {fileID: 1297706394114612, guid: bdd4821d553afa943974267c6fa4b514,
+  projectileSizeMultiplier: 2
+  projectilePrefab: {fileID: 1297706394114612, guid: 602631368e536e54485fc8ec3344df63,
     type: 2}
+  projectileDestroyEffectMultiplier: 2
 --- !u!114 &114856963890968222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,7 +259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 114471202601883370}
+  - {fileID: 114472980529562118}
+  maxHealth: 60
   gameBoss: {fileID: 0}
   target: {fileID: 0}
   scoreWorth: 5
@@ -263,7 +269,6 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 8192
-  maxHealth: 5
   enemyType: 1
 --- !u!136 &136476136134099242
 CapsuleCollider:

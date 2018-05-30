@@ -7,6 +7,11 @@ public class Health  {
     float maxHealth;
     float currentHealth;
 
+    public float CurrentHealth
+    {
+        get { return currentHealth; }
+    }
+
     public Health(float value)
     {
         maxHealth = value;

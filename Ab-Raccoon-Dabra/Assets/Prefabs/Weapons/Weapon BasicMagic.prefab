@@ -54,7 +54,20 @@ MonoBehaviour:
   damage: 5
   fireRate: 0.25
   destroyTime: 2
-  isContinuous: 1
+  iceBuff: 0
+  stunBuff: 0
+  buffTime: 0
+  projectileLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  layersOfEffect:
+    serializedVersion: 2
+    m_Bits: 0
+  playerTrans: {fileID: 0}
+  muzzle: {fileID: 0}
   range: 10
+  projectileSpeed: 0
+  projectileSizeMultiplier: 0
   projectilePrefab: {fileID: 1297706394114612, guid: bdd4821d553afa943974267c6fa4b514,
     type: 2}
+  destroyEffectParticles: {fileID: 0}

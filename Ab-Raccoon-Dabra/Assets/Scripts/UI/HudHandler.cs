@@ -8,11 +8,13 @@ public class HudHandler : MonoBehaviour
     public Text timerText;
     public Text spellnameText;
     public Slider spellTimeSlider;
+    public Slider healthbarSlider;
     public LevelManager levelBoss;
 
     private Player player;
     private Weapon_Spell spell;
     private int oldIndex;
+    private float oldHealth;
     private Image sliderBackground;
 
     void Awake()
@@ -34,6 +36,13 @@ public class HudHandler : MonoBehaviour
             sliderBackground.sprite = spell.spellIcon;
 
         }
+        if (oldHealth != player.CurrentHealth)
+        {
+            float healthPercentage = player.CurrentHealth / player.MaxHealth;
+            healthbarSlider.value = healthPercentage;
+            oldHealth = player.CurrentHealth;
+        }
+
         timerText.text = "Next wave in: " + levelBoss.TimerForDisplay().ToString("f0");
         spellTimeSlider.value = player.weapons[player.EquippedSpell].CooldownTime;
     }

@@ -5,9 +5,6 @@ using XInputDotNetPure; // Required in C#
 
 public class Player : Character {
 
-    [SerializeField]
-    float maxHealth;
-
 	public float movementSpeed;
 	[Range(0.01f, 0.99f), Tooltip("Deadzone for joystick movement (Left stick).")]
 	public float movementDeadzone = 0.05f;
@@ -29,11 +26,13 @@ public class Player : Character {
 
 	public void HandleInput(GamePadState state, GamePadState prevState)
 	{
-		HandleMove(state);
-		HandleRotating(state); //Also basic attack
+		if (health.isAlive())
+		{
+			HandleMove(state);
+			HandleRotating(state); //Also basic attack
 
-		HandleSpells(state, prevState);
-
+			HandleSpells(state, prevState);
+		}
 	}
 
 	void HandleMove(GamePadState state)
@@ -80,6 +79,12 @@ public class Player : Character {
         {
             ++EquippedSpell;
         }
+	}
+
+
+	protected override void DIE()
+	{
+		//Play dead animation
 	}
 
 }
