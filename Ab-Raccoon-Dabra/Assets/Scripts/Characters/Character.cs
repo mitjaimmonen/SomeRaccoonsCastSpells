@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-
-    protected Health health;
     public Weapon[] weapons;
-    protected int equippedSpell = 1;
+    [SerializeField] protected float maxHealth;
 
+
+    protected int equippedSpell = 1;
+    protected Health health;
     protected bool iceBuff = false, stunBuff = false;
     protected float buffTime;
 
@@ -24,6 +25,14 @@ public class Character : MonoBehaviour
             else
                 equippedSpell = value;
         }
+    }
+    public float MaxHealth
+    {
+        get { return maxHealth; }
+    }
+    public float CurrentHealth
+    {
+        get { return health.CurrentHealth; }
     }
   
     public void Attack()
@@ -73,10 +82,7 @@ public class Character : MonoBehaviour
 
     protected virtual void DIE()
     {
-
-            Destroy(gameObject);
-        
-
+         Destroy(gameObject);
     }
 
 }

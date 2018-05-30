@@ -15,8 +15,8 @@ public class Weapon : MonoBehaviour {
 	public LayerMask layersOfEffect;
 
 	//Point of origin for instantiating projectiles or sphere checks
-	protected Transform playerTrans;
-	protected Transform muzzle;
+	public Transform characterTrans;
+	public Transform muzzle;
 	protected bool isOnCooldown = false;
 
 	protected float fireRateTimer = -10f;
@@ -47,7 +47,8 @@ public class Weapon : MonoBehaviour {
 		if (!muzzle)
 			Debug.LogWarning("Weapon did not find muzzle.");
 
-		playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
+		if (!characterTrans)
+			Debug.LogWarning("No characterTransform!");
 			
 	}
 

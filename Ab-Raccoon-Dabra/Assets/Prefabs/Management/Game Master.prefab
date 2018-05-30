@@ -69,15 +69,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesSpawnedThisWave: 0
   enemiesKilled: 0
-  enemiesSpawnedOverall: 0
-  objectToSpawn: {fileID: 1574145178825922, guid: b5d95aa424cc568479cfc4d1092c3e68,
+  moleToSpawn: {fileID: 1574145178825922, guid: b5d95aa424cc568479cfc4d1092c3e68,
     type: 2}
-  spawnPositions:
+  batToSpawn: {fileID: 1574991387788592, guid: 7146e6c81cc99da4f810c6bc9b42be53, type: 2}
+  moleSpawnPositions:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  enemySpawnModifier: 2
+  batSpawnPositions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  moleSpawnModifier: 2
+  batSpawnModifier: 2
   scoreBonusModifier: 5
   standardSpawnTime: 1
   standardWaveDuration: 10

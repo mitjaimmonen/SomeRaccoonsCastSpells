@@ -49,6 +49,50 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1780104720708484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4578623563048326}
+  - component: {fileID: 114667612674525438}
+  m_Layer: 10
+  m_Name: Weapon_BasicMelee
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1905830938325350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4022853866296952}
+  m_Layer: 10
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4022853866296952
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905830938325350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4523863327143280}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4294393683182086
 Transform:
   m_ObjectHideFlags: 1
@@ -68,13 +112,28 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1574145178825922}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.705757, y: 1, z: 25.147198}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -24.895758, y: -0.39999998, z: 30.677198}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4294393683182086}
+  - {fileID: 4578623563048326}
+  - {fileID: 4022853866296952}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4578623563048326
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1780104720708484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4523863327143280}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23136002290464976
 MeshRenderer:
@@ -160,6 +219,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1253508704389388}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114667612674525438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1780104720708484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d78746910dbb5a46b2ca373722061f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  fireRate: 1
+  destroyTime: 0
+  iceBuff: 0
+  stunBuff: 1
+  buffTime: 0.1
+  layersOfEffect:
+    serializedVersion: 2
+    m_Bits: 512
+  characterTrans: {fileID: 4523863327143280}
+  muzzle: {fileID: 4022853866296952}
+  damageRadius: 1
+  forwardMultiplier: 1
 --- !u!114 &114671633963577214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,12 +254,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad6121bfc6701342bdca05b444e2f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons: []
+  weapons:
+  - {fileID: 114667612674525438}
+  maxHealth: 50
   gameBoss: {fileID: 0}
   target: {fileID: 0}
-  turnSpeed: 0.3
   scoreWorth: 5
-  maxHealth: 60
+  turnSpeed: 3
+  viewRangeModifier: 5
+  obstacles:
+    serializedVersion: 2
+    m_Bits: 8192
+  enemyType: 0
 --- !u!136 &136700998598030970
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -215,8 +304,8 @@ NavMeshAgent:
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0.5
+  m_AngularSpeed: 80
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

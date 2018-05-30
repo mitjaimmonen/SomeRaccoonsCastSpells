@@ -12,7 +12,6 @@ public class Weapon_Spell_Blast : Weapon_Spell {
 	public float projectileSizeMultiplier;
 	public float projectileBlastMultiplier;
 	public GameObject projectilePrefab;
-	public GameObject blastPrefab;
 
 	
 	protected override void Attack()
@@ -21,7 +20,7 @@ public class Weapon_Spell_Blast : Weapon_Spell {
 
 
 		
-		GameObject currentProjectilego = Instantiate(projectilePrefab, muzzle.position, playerTrans.rotation);
+		GameObject currentProjectilego = Instantiate(projectilePrefab, muzzle.position, characterTrans.rotation);
 		Projectile_Blast currentProjectile = currentProjectilego.GetComponent<Projectile_Blast>();
 		currentProjectile.damage = damage;
 		currentProjectile.destroyTime = destroyTime;
@@ -33,7 +32,6 @@ public class Weapon_Spell_Blast : Weapon_Spell {
 		currentProjectile.buffTime = buffTime;
 		currentProjectile.stunBuff = stunBuff;
 		currentProjectile.iceBuff = iceBuff;
-		currentProjectile.blastDamage = blastDamage;
 
 	}
 

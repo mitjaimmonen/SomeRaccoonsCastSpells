@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour {
+public class Health  {
 
     float maxHealth;
     float currentHealth;
+
+    public float CurrentHealth
+    {
+        get { return currentHealth; }
+    }
 
     public Health(float value)
     {

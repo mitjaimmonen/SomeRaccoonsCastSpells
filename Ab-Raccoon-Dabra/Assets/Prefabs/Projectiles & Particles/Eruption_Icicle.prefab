@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4783527831217466}
   - component: {fileID: 198255902543583742}
   - component: {fileID: 199312010276497278}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ice ring particlesystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4979128021685124}
   - component: {fileID: 114093272737632570}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eruption_Icicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4759305181195992}
   - component: {fileID: 198552959938293036}
   - component: {fileID: 199464302264441918}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ice destroy particlesystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ MonoBehaviour:
   buffTime: 0
   layersOfEffect:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
 --- !u!198 &198255902543583742
 ParticleSystem:
   m_ObjectHideFlags: 1

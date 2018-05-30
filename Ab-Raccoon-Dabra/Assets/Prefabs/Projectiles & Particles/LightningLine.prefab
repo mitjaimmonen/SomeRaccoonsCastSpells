@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4255435131836666}
   - component: {fileID: 120513921333733774}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LightningLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
