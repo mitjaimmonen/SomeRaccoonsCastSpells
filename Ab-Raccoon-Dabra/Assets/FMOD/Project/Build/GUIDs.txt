@@ -1,0 +1,4 @@
+{ceea3ae3-96a1-4734-bc22-13346d53a16d} event:/Background Music
+{3a954dc6-825a-461c-a014-49fe126b8da4} bus:/
+{7bb39c20-d9da-4eae-9ed1-50245ebdbd96} bus:/Reverb
+{4622f3a0-1069-4f8c-ad4e-0f0dc1436efc} bank:/Master Bank
