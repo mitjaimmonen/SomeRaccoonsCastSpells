@@ -101,11 +101,6 @@ public class StateManager : MonoBehaviour
 
         currentWave = new WaveState(moles, bats, scoreBonus, spawnTimer, waveTimer, waveNumber);
 
-        if (currentWave != null)
-        {
-            Debug.Log("Entered wave " + waveNumber);
-        }
-
     }
 
     //the duration of the wave
@@ -173,8 +168,7 @@ public class StateManager : MonoBehaviour
             Instantiate(batToSpawn, batSpawnPositions[randomPosition].position, batSpawnPositions[randomPosition].rotation);
             spawnCounter = 0;
             batsSpawned++;
-            enemiesSpawnedThisWave++;
-            Debug.Log("Bats Spawned:" + batsSpawned  + " Bats to spawn: " + BatsToSpawn());
+            enemiesSpawnedThisWave++;           
         }
         enemiesSpawnedOverall++;
     }
@@ -184,8 +178,7 @@ public class StateManager : MonoBehaviour
     public void ExitWave()
     {
         //coroutine? wait (if necessary) and loads next wave   
-        int nextWave = currentWave.waveNumber + 1;
-        Debug.Log("Next wave is" + nextWave);
+        int nextWave = currentWave.waveNumber + 1;   
         EnterWave(currentWave.waveNumber + 1);
     }
 }

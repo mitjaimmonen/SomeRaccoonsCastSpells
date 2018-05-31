@@ -33,6 +33,16 @@ public class AnimControl {
         Debug.Log("Play dead!");
     }
 
+    public void Freeze()
+    {
+        animator.speed = 0;
+    }
+
+    public void Unfreeze()
+    {
+        animator.speed = 1;
+    }
+
     public virtual void PlaySpellAnimation()
     {
         //nothing

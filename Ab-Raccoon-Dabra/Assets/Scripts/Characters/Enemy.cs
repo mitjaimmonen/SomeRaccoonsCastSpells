@@ -51,7 +51,13 @@ public class Enemy : Character
             canAttack = false;
             timerReset = false;
         }
-        
+
+        if (iceBuff || stunBuff)
+        {
+            canAttack = false;
+            timerReset = false;
+        }
+
         return canAttack;
     }
 
@@ -85,13 +91,16 @@ public class Enemy : Character
             navMeshAgent.SetDestination(target.position);
         else
             navMeshAgent.SetDestination(transform.position);
-        
+
     }
 
     public void RotateTowardsTraget()
     {
-        Quaternion targetRotation = Quaternion.LookRotation(TargetDirection());
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, turnSpeed);
+        if (!iceBuff && !stunBuff && target)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(TargetDirection());
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, turnSpeed);
+        }
     }
 
     private void Update()

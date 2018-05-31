@@ -47,7 +47,7 @@ public class Character : MonoBehaviour
     {
         get { return health.isAlive(); }
     }
-  
+
     public void Attack()
     {
         Attack(0);
@@ -70,9 +70,29 @@ public class Character : MonoBehaviour
         iceBuff = addIceBuff;
         stunBuff = addStunBuff;
         buffTime = time;
+        animControl.Freeze();
+
+        if (addIceBuff)
+        {
+            List<Color> materialList = new List<Color   >();
+            Renderer renderer = GetComponentInChildren<Renderer>();
+
+            foreach (Material m in renderer.materials)
+            {
+                Color temp = new Color();
+                temp = m.color;
+                materialList.Add(temp);
+                m.color = Color.cyan;
+            }
+
+            StartCoroutine(HandleBuff(addIceBuff, addStunBuff, materialList, renderer));
+        }
+
+        else
         StartCoroutine(HandleBuff(addIceBuff, addStunBuff));
 
     }
+
     IEnumerator HandleBuff(bool ice, bool stun)
     {
         yield return new WaitForSecondsRealtime(buffTime);
@@ -80,6 +100,26 @@ public class Character : MonoBehaviour
             iceBuff = false;
         if (stun)
             stunBuff = false;
+        animControl.Unfreeze();    
+    }
+
+    IEnumerator HandleBuff(bool ice, bool stun, List<Color> mList, Renderer rend)
+    {
+        yield return new WaitForSecondsRealtime(buffTime);
+
+        if (ice)
+            iceBuff = false;
+        if (stun)
+            stunBuff = false;
+        animControl.Unfreeze();
+        int i = 0;
+
+        foreach (Color m in mList)
+        {
+            Debug.Log("unfreezing");
+            rend.materials[i].color = mList[i];
+            i++;
+        }
 
         yield break;
 
@@ -99,7 +139,7 @@ public class Character : MonoBehaviour
         if (takeDamageParticles)
         {
             Quaternion rot = transform.rotation;
-            rot.y = Random.Range(0,360);
+            rot.y = Random.Range(0, 360);
             GameObject temp = Instantiate(takeDamageParticles, transform.position, rot);
             Destroy(temp, 2f);
         }
@@ -109,7 +149,7 @@ public class Character : MonoBehaviour
 
         if (!health.isAlive())
             DIE();
-        
+
     }
     public void GetHit(float dmgValue, bool explosion)
     {
@@ -123,7 +163,7 @@ public class Character : MonoBehaviour
         if (takeDamageParticles)
         {
             Quaternion rot = transform.rotation;
-            rot.y = Random.Range(0,360);
+            rot.y = Random.Range(0, 360);
             GameObject temp = Instantiate(takeDamageParticles, transform.position, rot);
             Destroy(temp, 2f);
         }
