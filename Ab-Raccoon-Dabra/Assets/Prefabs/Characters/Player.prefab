@@ -428,13 +428,11 @@ MonoBehaviour:
   iceBuff: 1
   stunBuff: 0
   buffTime: 5
-  projectileLayer:
-    serializedVersion: 2
-    m_Bits: 2048
+  attackSound: event:/Weapon Spell Eruption Icicle create
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 1024
-  playerTrans: {fileID: 4533803710640188}
+  characterTrans: {fileID: 4533803710640188}
   muzzle: {fileID: 4379863619136552}
   spellIcon: {fileID: 21300000, guid: ee5e2a217c746404495c51cf4bd4262a, type: 3}
   spellName: Ice Wall
@@ -458,13 +456,11 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 0
   buffTime: 0
-  projectileLayer:
-    serializedVersion: 2
-    m_Bits: 2048
+  attackSound: event:/Weapon Spell Blast
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 1024
-  playerTrans: {fileID: 4533803710640188}
+  characterTrans: {fileID: 4533803710640188}
   muzzle: {fileID: 4379863619136552}
   spellIcon: {fileID: 21300000, guid: ecdf1385fc8315f4a969c7c17c7c74e8, type: 3}
   spellName: Fire Blast
@@ -486,12 +482,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b2e7dafc6b4ed49bb397ad0b40c81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 1718375093906036, guid: 282c37910860f88419d865815a1559bb,
+    type: 2}
+  explosionParticles: {fileID: 1234875548276460, guid: 1da6f59e6a6580140ba3c6c6772542e1,
+    type: 2}
+  takeDamageParticles: {fileID: 1692861278265462, guid: e3b94656e3688f048a291aee97e42612,
+    type: 2}
   weapons:
   - {fileID: 114874292399375582}
   - {fileID: 114683993738313142}
   - {fileID: 114387191841214722}
   - {fileID: 114269374859281420}
   maxHealth: 100
+  explosionSound: event:/Character explosion
+  damageSound: event:/Character Damage
+  deathSound: event:/Character Player death
   movementSpeed: 15
   movementDeadzone: 0.05
   rotationDeadzone: 0.05
@@ -513,13 +518,11 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 1
   buffTime: 1
-  projectileLayer:
-    serializedVersion: 2
-    m_Bits: 2048
+  attackSound: event:/Weapon Spell Lightning
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 1024
-  playerTrans: {fileID: 4533803710640188}
+  characterTrans: {fileID: 4533803710640188}
   muzzle: {fileID: 4379863619136552}
   spellIcon: {fileID: 21300000, guid: 5524419a87263784491e9e715f46f14c, type: 3}
   spellName: Thunder
@@ -528,6 +531,8 @@ MonoBehaviour:
   effectArea: 2.64
   radiusMultiplier: 0.8
   linerenderer: {fileID: 120513921333733774, guid: a5b3cb111b9f4fb408599dc615cc7f46,
+    type: 2}
+  lightningParticles: {fileID: 1648811981671958, guid: 18526540e65c7234a8db452c0aa8876c,
     type: 2}
 --- !u!114 &114787441681068824
 MonoBehaviour:
@@ -546,13 +551,11 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 1
   buffTime: 0.1
-  projectileLayer:
-    serializedVersion: 2
-    m_Bits: 2048
+  attackSound: 
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 1024
-  playerTrans: {fileID: 4533803710640188}
+  characterTrans: {fileID: 4533803710640188}
   muzzle: {fileID: 4379863619136552}
   damageRadius: 1
   forwardMultiplier: 1
@@ -573,13 +576,11 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 1
   buffTime: 0.15
-  projectileLayer:
-    serializedVersion: 2
-    m_Bits: 2048
+  attackSound: event:/Weapon BasicMagic
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 1024
-  playerTrans: {fileID: 4533803710640188}
+  characterTrans: {fileID: 4533803710640188}
   muzzle: {fileID: 4379863619136552}
   range: 50
   projectileSpeed: 20

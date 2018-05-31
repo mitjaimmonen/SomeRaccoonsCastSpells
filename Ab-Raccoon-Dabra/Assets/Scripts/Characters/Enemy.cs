@@ -11,7 +11,10 @@ public class Enemy : Character
     public float turnSpeed;
     public float viewRangeModifier = 5;
     public LayerMask obstacles;
+    public float attackDelay;
 
+    bool canAttack, timerReset;
+    float attackDelayTimer;
 
 
     NavMeshAgent navMeshAgent;
@@ -29,31 +32,31 @@ public class Enemy : Character
     }
     public bool CanAttack()
     {
-        if (enemyType == EnemyType.Bat)
+        if (attackDelayTimer < Time.time - attackDelay)
+            canAttack = true;
+
+        float sqrLen = TargetDirection().sqrMagnitude;
+        if (sqrLen < navMeshAgent.stoppingDistance * navMeshAgent.stoppingDistance)
         {
-            float sqrLen = TargetDirection().sqrMagnitude;
-            if (sqrLen < navMeshAgent.stoppingDistance * navMeshAgent.stoppingDistance)
+            //Reset timer once
+            if (!timerReset)
             {
-                //is in range to attack 
-                return true;
+                canAttack = false;
+                attackDelayTimer = Time.time;
+                timerReset = true;
             }
-            else
-                return false;
-        }
-        else if (enemyType == EnemyType.Mole)
-        {
-            float sqrLen = TargetDirection().sqrMagnitude;
             
-            if (sqrLen < navMeshAgent.stoppingDistance * navMeshAgent.stoppingDistance)
-            {
-                //is in range to attack 
-                return true;
-            }
-            else
-                return false;
+            //is in range to attack & timer is over attackDelay
+            return canAttack;
         }
         else
-            return false;
+        {
+            canAttack = false;
+            timerReset = false;
+            return canAttack;
+
+        }
+
 
     }
 

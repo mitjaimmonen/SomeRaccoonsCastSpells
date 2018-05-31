@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{fc284f37-e9be-4621-adf9-b5c938a519c3}">
         <property name="assetPath">
-            <value>AKnewGod - Indifferent Heavy Metal royalty free music  FMH release.mp3</value>
+            <value>Music/AKnewGod - Indifferent Heavy Metal royalty free music  FMH release.mp3</value>
         </property>
         <property name="isStreaming">
             <value>true</value>

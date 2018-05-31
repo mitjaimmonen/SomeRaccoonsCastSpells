@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour {
 	public float destroyTime;
 	public bool iceBuff, stunBuff;
 	public float buffTime;
+	[FMODUnity.EventRef] public string attackSound;
 
 	public LayerMask layersOfEffect;
 

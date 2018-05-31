@@ -57,16 +57,14 @@ MonoBehaviour:
   iceBuff: 1
   stunBuff: 0
   buffTime: 5
-  projectileLayer:
-    serializedVersion: 2
-    m_Bits: 0
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 1024
-  playerTrans: {fileID: 0}
+  characterTrans: {fileID: 0}
   muzzle: {fileID: 0}
   spellIcon: {fileID: 0}
   spellName: 
   icicleEruptionPrefab: {fileID: 1244212185694730, guid: 0761813890247c84b963d74b9dd388de,
     type: 2}
   icicleSizeMultiplier: 1
+  attackSound: event:/Weapon Spell Eruption Icicle create

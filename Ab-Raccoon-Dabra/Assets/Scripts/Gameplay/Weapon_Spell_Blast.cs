@@ -22,6 +22,7 @@ public class Weapon_Spell_Blast : Weapon_Spell {
 		
 		GameObject currentProjectilego = Instantiate(projectilePrefab, muzzle.position, characterTrans.rotation);
 		Projectile_Blast currentProjectile = currentProjectilego.GetComponent<Projectile_Blast>();
+		FMODUnity.RuntimeManager.PlayOneShot(attackSound, transform.position);
 		currentProjectile.damage = damage;
 		currentProjectile.destroyTime = destroyTime;
 		currentProjectile.range = range;

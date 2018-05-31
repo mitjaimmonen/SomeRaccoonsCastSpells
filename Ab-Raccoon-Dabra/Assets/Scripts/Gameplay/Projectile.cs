@@ -40,7 +40,7 @@ public class Projectile : MonoBehaviour {
 		transform.position += transform.forward * speed * Time.deltaTime;
 	}
 
-	void OnCollisionEnter(Collision other)
+	protected virtual void OnCollisionEnter(Collision other)
 	{
 		//Deal damage
 		Character enemy = other.gameObject.GetComponentInChildren<Character>();

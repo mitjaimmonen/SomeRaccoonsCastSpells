@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="AudioFile" id="{4e7a17d5-1aca-408a-bca6-d1dc0a047c5c}">
         <property name="assetPath">
-            <value>Nicolai Heidlas - These Moments Guitar  happy  calm royalty free music  FMH promotion.mp3</value>
+            <value>Music/Nicolai Heidlas - These Moments Guitar  happy  calm royalty free music  FMH promotion.mp3</value>
         </property>
         <property name="isStreaming">
             <value>true</value>

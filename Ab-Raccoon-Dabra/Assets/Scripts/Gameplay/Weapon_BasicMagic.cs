@@ -22,6 +22,7 @@ public class Weapon_BasicMagic : Weapon {
 		
 		GameObject currentProjectilego = Instantiate(projectilePrefab, muzzle.position, characterTrans.rotation);
 		Projectile currentProjectile = currentProjectilego.GetComponent<Projectile>();
+		FMODUnity.RuntimeManager.PlayOneShot(attackSound, transform.position);
 		currentProjectile.damage = damage;
 		currentProjectile.destroyTime = destroyTime;
 		currentProjectile.range = range;

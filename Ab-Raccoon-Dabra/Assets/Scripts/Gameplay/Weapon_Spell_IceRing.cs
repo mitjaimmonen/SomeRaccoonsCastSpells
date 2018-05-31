@@ -16,6 +16,7 @@ public class Weapon_Spell_IceRing : Weapon_Spell {
 		temppos.y -= characterTrans.GetComponent<Player>().playerCollider.height/2;
 		GameObject tempIcicleGo = Instantiate(icicleEruptionPrefab, temppos, characterTrans.rotation);
 		Eruption_Icicle currentIcicle = tempIcicleGo.GetComponent<Eruption_Icicle>();
+		FMODUnity.RuntimeManager.PlayOneShot(attackSound, transform.position);
 		currentIcicle.layersOfEffect = layersOfEffect;
 		currentIcicle.damage = damage;
 		currentIcicle.destroyTime = destroyTime;

@@ -85,6 +85,13 @@ public class Player : Character {
 	protected override void DIE()
 	{
 		//Play dead animation
+		if (!destroying)
+		{
+			if (deathSound != "")
+				FMODUnity.RuntimeManager.PlayOneShot(deathSound, transform.position);
+			destroying = true;
+		}
+
 	}
 
 }

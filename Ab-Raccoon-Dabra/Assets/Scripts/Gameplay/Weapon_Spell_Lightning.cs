@@ -20,6 +20,7 @@ public class Weapon_Spell_Lightning : Weapon_Spell {
 	public float effectArea;
 	public float radiusMultiplier;
 	public LineRenderer linerenderer;
+	public GameObject lightningParticles;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +36,9 @@ public class Weapon_Spell_Lightning : Weapon_Spell {
 		//Check all affected enemies with sphere checks
 		// RaycastHit hit;
 
+		GameObject temp = Instantiate(lightningParticles, transform.position, characterTrans.rotation);
+		Destroy(temp, 2f);
+		FMODUnity.RuntimeManager.PlayOneShot(attackSound, transform.position);
 
 		RaycastHit[] playerHits = Physics.SphereCastAll(characterTrans.position, effectArea, characterTrans.forward, hopRadius, layersOfEffect);
 		foreach(RaycastHit hit in playerHits)

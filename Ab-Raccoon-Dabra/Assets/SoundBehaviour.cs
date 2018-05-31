@@ -1,0 +1,50 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SoundBehaviour : MonoBehaviour {
+
+	[FMODUnity.EventRef] public string backgroundMusic;
+	FMOD.Studio.EventInstance musicEI;
+
+	GameObject target;
+	Player player;
+
+	float timer;
+	void Awake()
+	{
+		DontDestroyOnLoad(this);
+		musicEI = FMODUnity.RuntimeManager.CreateInstance(backgroundMusic);
+		musicEI.start();
+ 		FMODUnity.RuntimeManager.AttachInstanceToGameObject(musicEI, GetComponent<Transform>(), GetComponent<Rigidbody>());
+	}
+
+	void Update()
+	{
+
+
+		musicEI.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
+
+		if (timer < Time.time - 0.033f) //Update 30 tps
+		{
+			if (!target)
+				target = GameObject.FindGameObjectWithTag("Player");
+			if (!target)
+				target = GameObject.Find("Main Camera");
+			if (target)
+				transform.position = target.transform.position;
+			if (!player)
+			{
+				GameObject temp = GameObject.FindGameObjectWithTag("Player");
+				if (temp)
+					player = temp.GetComponentInChildren<Player>();
+			}
+			musicEI.setParameterValue("isGame", SceneManager.GetActiveScene().buildIndex == 1 ? 1 : 0);
+			musicEI.setParameterValue("Master", 0.8f);
+			if (player)
+				musicEI.setParameterValue("isAlive", player.IsAlive ? 1 : 0);
+
+		}
+	}
+}

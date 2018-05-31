@@ -236,6 +236,7 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 1
   buffTime: 0.1
+  attackSound: 
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 512
@@ -254,9 +255,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad6121bfc6701342bdca05b444e2f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 1718375093906036, guid: 282c37910860f88419d865815a1559bb,
+    type: 2}
+  explosionParticles: {fileID: 1234875548276460, guid: 1da6f59e6a6580140ba3c6c6772542e1,
+    type: 2}
+  takeDamageParticles: {fileID: 1692861278265462, guid: e3b94656e3688f048a291aee97e42612,
+    type: 2}
   weapons:
   - {fileID: 114667612674525438}
   maxHealth: 50
+  explosionSound: event:/Character explosion
+  damageSound: event:/Character Damage
+  deathSound: event:/Character Mole death
   gameBoss: {fileID: 0}
   target: {fileID: 0}
   scoreWorth: 5
@@ -265,6 +275,7 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 8192
+  attackDelay: 0.25
   enemyType: 0
 --- !u!136 &136700998598030970
 CapsuleCollider:
