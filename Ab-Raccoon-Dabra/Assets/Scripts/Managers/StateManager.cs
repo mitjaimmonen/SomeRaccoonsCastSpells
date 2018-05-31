@@ -90,6 +90,8 @@ public class StateManager : MonoBehaviour
         enemiesKilled = 0;
         enemiesSpawnedThisWave = 0;
         timerCounter = 0;
+        molesSpawned = 0;
+        batsSpawned = 0;
 
         int moles = Mathf.RoundToInt(waveNumber * moleSpawnModifier + 5);
         int bats = Mathf.RoundToInt(waveNumber * batSpawnModifier);
@@ -122,7 +124,7 @@ public class StateManager : MonoBehaviour
                 {
                     if (MolesToSpawn() > 0)
                     {
-                        int maxBatsToSpawn = Mathf.Min(BatsToSpawn(), maxEnemiesToSpawn);
+                        int maxBatsToSpawn = Mathf.Min(BatsToSpawn(), amountOfEnemies);
                         int amountOfBats = Random.Range(1, maxBatsToSpawn);
                         SpawnBats(amountOfBats, player);
                         amountOfEnemies -= amountOfBats;
@@ -172,6 +174,7 @@ public class StateManager : MonoBehaviour
             spawnCounter = 0;
             batsSpawned++;
             enemiesSpawnedThisWave++;
+            Debug.Log("Bats Spawned:" + batsSpawned  + " Bats to spawn: " + BatsToSpawn());
         }
         enemiesSpawnedOverall++;
     }

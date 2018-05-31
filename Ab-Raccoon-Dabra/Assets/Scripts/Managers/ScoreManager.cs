@@ -7,6 +7,11 @@ public class ScoreManager : MonoBehaviour {
     float currentScore;
     int totalEnemiesKilled;
 
+    public float GetScore()
+    {
+        return currentScore;
+    }
+
     public void AddToScore(int value)
     {
         currentScore += value;
@@ -16,6 +21,7 @@ public class ScoreManager : MonoBehaviour {
     {
         currentScore = 0;
     }
+
 
     public void SaveScore()
     {
