@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
     public Weapon[] weapons;
     [SerializeField] protected float maxHealth;
 
+    protected AnimControl animControl;
 
     protected int equippedSpell = 1;
     protected Health health;
@@ -17,10 +18,10 @@ public class Character : MonoBehaviour
 
     public int EquippedSpell
     {
-        get {return equippedSpell;}
+        get { return equippedSpell; }
         set
-        { 
-            if (value > weapons.Length-1 || value < 1)
+        {
+            if (value > weapons.Length - 1 || value < 1)
                 equippedSpell = 1;
             else
                 equippedSpell = value;
@@ -34,14 +35,15 @@ public class Character : MonoBehaviour
     {
         get { return health.CurrentHealth; }
     }
-  
+
     public void Attack()
     {
         Attack(0);
     }
     public void Attack(int equippedSpell)
     {
-      weapons[equippedSpell].TryAttack();
+        weapons[equippedSpell].TryAttack(animControl, equippedSpell);
+
     }
 
     public virtual void Move()
@@ -55,7 +57,7 @@ public class Character : MonoBehaviour
         stunBuff = addStunBuff;
         buffTime = time;
         StartCoroutine(HandleBuff(addIceBuff, addStunBuff));
-        
+
     }
     IEnumerator HandleBuff(bool ice, bool stun)
     {
@@ -64,25 +66,27 @@ public class Character : MonoBehaviour
             iceBuff = false;
         if (stun)
             stunBuff = false;
-            
+
         yield break;
-            
+
     }
 
     public void GetHit(float dmgValue)
     {
         //take damage, stagger and such
         health.TakeDamage(dmgValue);
+        animControl.PlayHurtAnimation();
 
         if (!health.isAlive())
         {
+           
             DIE();
         }
     }
 
     protected virtual void DIE()
     {
-         Destroy(gameObject);
+        Destroy(gameObject);
     }
 
 }

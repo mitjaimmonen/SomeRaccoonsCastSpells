@@ -13,7 +13,7 @@ public class Weapon_Spell_IceRing : Weapon_Spell {
 		base.Attack();
 
 		Vector3 temppos = characterTrans.position;
-		temppos.y -= characterTrans.GetComponent<Player>().playerCollider.height/2;
+		temppos.y -= characterTrans.GetComponentInChildren<Player>().playerCollider.height/2;
 		GameObject tempIcicleGo = Instantiate(icicleEruptionPrefab, temppos, characterTrans.rotation);
 		Eruption_Icicle currentIcicle = tempIcicleGo.GetComponent<Eruption_Icicle>();
 		currentIcicle.layersOfEffect = layersOfEffect;

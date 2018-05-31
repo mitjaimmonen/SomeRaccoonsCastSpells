@@ -11,9 +11,7 @@ public class Enemy : Character
     public float turnSpeed;
     public float viewRangeModifier = 5;
     public LayerMask obstacles;
-
-
-
+      
     NavMeshAgent navMeshAgent;
 
     public EnemyType enemyType;
@@ -72,6 +70,8 @@ public class Enemy : Character
     private void Awake()
     {
         health = new Health(maxHealth);
+
+        animControl = new AnimControl(GetComponentInChildren<Animator>());
     }
 
     private void Start()
