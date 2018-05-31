@@ -14,20 +14,26 @@ public class SoundBehaviour : MonoBehaviour {
 	float timer;
 	void Awake()
 	{
+		if (GameObject.FindGameObjectsWithTag("SoundManager").Length > 1)
+		{
+			Destroy(this.gameObject);
+		}
+
 		DontDestroyOnLoad(this);
 		musicEI = FMODUnity.RuntimeManager.CreateInstance(backgroundMusic);
 		musicEI.start();
  		FMODUnity.RuntimeManager.AttachInstanceToGameObject(musicEI, GetComponent<Transform>(), GetComponent<Rigidbody>());
+
 	}
 
+		
 	void Update()
 	{
-
-
 		musicEI.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
 
 		if (timer < Time.time - 0.033f) //Update 30 tps
 		{
+			timer = Time.time;
 			if (!target)
 				target = GameObject.FindGameObjectWithTag("Player");
 			if (!target)

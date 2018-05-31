@@ -1401,7 +1401,7 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 1
   buffTime: 0.1
-  attackSound: event:/Weapon BasicMelee
+  attackSound: event:/Weapon BasicMelee Enemy Mole
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 512

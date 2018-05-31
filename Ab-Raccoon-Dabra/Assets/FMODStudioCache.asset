@@ -18,22 +18,23 @@ MonoBehaviour:
   - {fileID: 114506290141778028}
   - {fileID: 114754375464131310}
   - {fileID: 114652592784478720}
-  - {fileID: 114130094093894850}
   - {fileID: 114351066795958888}
   - {fileID: 114327076733928858}
   - {fileID: 114712743968718258}
   - {fileID: 114709928098912628}
   - {fileID: 114512662410739612}
-  - {fileID: 114901246122265158}
   - {fileID: 114740396587768366}
   - {fileID: 114206041333720842}
   - {fileID: 114170525902334352}
   - {fileID: 114383768162064062}
   - {fileID: 114978791872635166}
   - {fileID: 114113496942493414}
+  - {fileID: 114641974550482022}
+  - {fileID: 114577248645629170}
+  - {fileID: 114852013169262112}
   MasterBankRef: {fileID: 114370321749366010}
   StringsBankRef: {fileID: 114776164142785074}
-  stringsBankWriteTime: 636633972814387136
+  stringsBankWriteTime: 636633982181358060
   cacheVersion: 2
 --- !u!114 &114008878387933888
 MonoBehaviour:
@@ -235,8 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Weapon BasicMagic
   guid: 511eaff0407d7843ac6903a6b2400256
-  Banks:
-  - {fileID: 114370321749366010}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -471,6 +471,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: isGame
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114260686281053648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isAlive
   Min: 0
   Max: 1
   Default: 0
@@ -741,11 +756,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Laptop\Documents\Git\SomeRaccoonsCastSpells\Ab-Raccoon-Dabra\Assets\FMOD\Project\Build\Desktop\Master
     Bank.bank
-  lastModified: 636633972814276866
+  lastModified: 636633982181232715
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 5854752
+    Value: 5870944
   Exists: 1
 --- !u!114 &114370816739128012
 MonoBehaviour:
@@ -923,9 +938,9 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114276287677219770}
-  - {fileID: 114988427742246772}
-  - {fileID: 114578376246782496}
+  - {fileID: 114963487949547136}
+  - {fileID: 114260686281053648}
+  - {fileID: 114896627135630458}
   MinDistance: 1
   MaxDistance: 20
   Length: 270093
@@ -1011,6 +1026,28 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114577248645629170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Weapon BasicMagic Player
+  guid: 511eaff0407d7843ac6903a6b2400256
+  Banks:
+  - {fileID: 114370321749366010}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 275
 --- !u!114 &114578376246782496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,6 +1153,28 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114641974550482022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Weapon BasicMagic Enemy Bat
+  guid: 1642c8a0cb8cbc42a94f3cb9d4672b06
+  Banks:
+  - {fileID: 114370321749366010}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 522
 --- !u!114 &114652592784478720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1343,11 +1402,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\Project\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636633972814387136
+  lastModified: 636633982181358060
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1470
+    Value: 1542
   Exists: 1
 --- !u!114 &114789921932809998
 MonoBehaviour:
@@ -1394,7 +1453,44 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114852013169262112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Weapon BasicMelee Enemy Mole
+  guid: bc0cd19b8e23744c89755b54113edf88
+  Banks:
+  - {fileID: 114370321749366010}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 574
 --- !u!114 &114881624029584402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Master
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114896627135630458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1422,8 +1518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Weapon BasicMelee
   guid: bc0cd19b8e23744c89755b54113edf88
-  Banks:
-  - {fileID: 114370321749366010}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1497,6 +1592,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 580
+--- !u!114 &114963487949547136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isGame
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114973856631168990
 MonoBehaviour:
   m_ObjectHideFlags: 0
