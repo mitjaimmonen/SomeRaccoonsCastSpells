@@ -26,37 +26,39 @@ public class Weapon_Spell_Lightning : Weapon_Spell {
 		
 	}
 	
-	public override void Attack()
+	protected override void Attack()
 	{
 		base.Attack();
 
 
-		if (fireRateTimer > Time.time - fireRate)
-			return;
-		
-		fireRateTimer = Time.time;
-
-		// List<GameObject> affectedEnemies = new List<GameObject>();
 		List<Collider> hits = new List<Collider>();
 		//Check all affected enemies with sphere checks
 		// RaycastHit hit;
 
 
-		RaycastHit[] playerHits = Physics.SphereCastAll(playerTrans.position, effectArea, playerTrans.forward, hopRadius, layersOfEffect);
+		RaycastHit[] playerHits = Physics.SphereCastAll(characterTrans.position, effectArea, characterTrans.forward, hopRadius, layersOfEffect);
 		foreach(RaycastHit hit in playerHits)
 		{
 			if (!hits.Contains(hit.collider))
 			{
 				//Draw lightning line between player & spherehit
 				var points = new Vector3[2];
-				points[0] = playerTrans.position;
+				points[0] = characterTrans.position;
 				points[1] = hit.collider.transform.position;
 
-				var line = Instantiate(linerenderer, playerTrans.position, playerTrans.rotation);
+				var line = Instantiate(linerenderer, characterTrans.position, characterTrans.rotation);
 				line.SetPositions(points);
 				Destroy(line.gameObject, 0.1f);
 				//Deal damage to spherehit
-				
+				Enemy enemy = hit.collider.GetComponentInChildren<Enemy>();
+				if (!enemy)
+					enemy = hit.collider.GetComponentInParent<Enemy>();
+				if (enemy)
+				{
+					enemy.AddBuff(iceBuff, stunBuff, buffTime);
+					enemy.GetHit(damage);
+				}
+
 				hits.Add(hit.collider);
 
 			}
@@ -79,11 +81,15 @@ public class Weapon_Spell_Lightning : Weapon_Spell {
 						Vector3[] points = new Vector3[2];
 						points[0] = hits[j].transform.position;
 						points[1] = spherehit2.transform.position;
-						LineRenderer line = Instantiate(linerenderer, playerTrans.position, playerTrans.rotation);
+						LineRenderer line = Instantiate(linerenderer, characterTrans.position, characterTrans.rotation);
 						line.SetPositions(points);
 						Destroy(line.gameObject, 0.1f);
-						//Draw lightning line between spherehit & spherehit2
-						//Deal damage to spherehit2
+
+						Enemy enemy = spherehit2.GetComponentInChildren<Enemy>();
+						if (!enemy)
+							enemy = spherehit2.GetComponentInParent<Enemy>();
+						enemy.AddBuff(iceBuff, stunBuff, buffTime);
+						enemy.GetHit(damage);
 						hits.Add(spherehit2);
 
 					}
@@ -96,18 +102,12 @@ public class Weapon_Spell_Lightning : Weapon_Spell {
 		if (hits.Count == 0)
 		{
 			Vector3[] points = new Vector3[2];
-			points[0] = playerTrans.position;
-			points[1] = playerTrans.forward* hopRadius + playerTrans.position;
-			LineRenderer line = Instantiate(linerenderer, playerTrans.position, playerTrans.rotation);
+			points[0] = characterTrans.position;
+			points[1] = characterTrans.forward* hopRadius + characterTrans.position;
+			LineRenderer line = Instantiate(linerenderer, characterTrans.position, characterTrans.rotation);
 			line.SetPositions(points);
 			Destroy(line.gameObject, 0.1f);
+		
 		}
-
-		foreach (var enemy in hits)
-			Destroy(enemy.gameObject, 0.1f);
-		// Debug.Log(hits.Count);
-		//Deal damage on enemies
-		//Spawn visuals
-
 	}
 }

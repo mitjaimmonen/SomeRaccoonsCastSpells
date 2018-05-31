@@ -12,8 +12,7 @@ public class Enemy : Character
     public float viewRangeModifier = 5;
     public LayerMask obstacles;
 
-    [SerializeField]
-    float maxHealth;
+
 
     NavMeshAgent navMeshAgent;
 
@@ -33,6 +32,18 @@ public class Enemy : Character
         if (enemyType == EnemyType.Bat)
         {
             float sqrLen = TargetDirection().sqrMagnitude;
+            if (sqrLen < navMeshAgent.stoppingDistance * navMeshAgent.stoppingDistance)
+            {
+                //is in range to attack 
+                return true;
+            }
+            else
+                return false;
+        }
+        else if (enemyType == EnemyType.Mole)
+        {
+            float sqrLen = TargetDirection().sqrMagnitude;
+            
             if (sqrLen < navMeshAgent.stoppingDistance * navMeshAgent.stoppingDistance)
             {
                 //is in range to attack 
@@ -70,7 +81,11 @@ public class Enemy : Character
 
     public override void Move()
     {
-        navMeshAgent.SetDestination(target.position);
+        if (!iceBuff && !stunBuff && target)
+            navMeshAgent.SetDestination(target.position);
+        else
+            navMeshAgent.SetDestination(transform.position);
+        
     }
 
     public void RotateTowardsTraget()
@@ -95,7 +110,7 @@ public class Enemy : Character
 
     private void AttackCall()
     {
-        Debug.Log(gameObject.name + " attacking!");
+        // Debug.Log(gameObject.name + " attacking!");
         Attack(0);
     }
 

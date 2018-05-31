@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-
-    protected Health health;
     public Weapon[] weapons;
+    [SerializeField] protected float maxHealth;
+
+
     protected int equippedSpell = 1;
+    protected Health health;
+    protected bool iceBuff = false, stunBuff = false;
+    protected float buffTime;
+
+
 
     public int EquippedSpell
     {
@@ -20,6 +26,14 @@ public class Character : MonoBehaviour
                 equippedSpell = value;
         }
     }
+    public float MaxHealth
+    {
+        get { return maxHealth; }
+    }
+    public float CurrentHealth
+    {
+        get { return health.CurrentHealth; }
+    }
   
     public void Attack()
     {
@@ -27,7 +41,7 @@ public class Character : MonoBehaviour
     }
     public void Attack(int equippedSpell)
     {
-      weapons[equippedSpell].Attack();
+      weapons[equippedSpell].TryAttack();
     }
 
     public virtual void Move()
@@ -35,19 +49,40 @@ public class Character : MonoBehaviour
 
     }
 
+    public void AddBuff(bool addIceBuff, bool addStunBuff, float time)
+    {
+        iceBuff = addIceBuff;
+        stunBuff = addStunBuff;
+        buffTime = time;
+        StartCoroutine(HandleBuff(addIceBuff, addStunBuff));
+        
+    }
+    IEnumerator HandleBuff(bool ice, bool stun)
+    {
+        yield return new WaitForSecondsRealtime(buffTime);
+        if (ice)
+            iceBuff = false;
+        if (stun)
+            stunBuff = false;
+            
+        yield break;
+            
+    }
+
     public void GetHit(float dmgValue)
     {
         //take damage, stagger and such
         health.TakeDamage(dmgValue);
+
+        if (!health.isAlive())
+        {
+            DIE();
+        }
     }
 
     protected virtual void DIE()
     {
-        if (!health.isAlive())
-        {
-            Destroy(gameObject);
-        }
-
+         Destroy(gameObject);
     }
 
 }
