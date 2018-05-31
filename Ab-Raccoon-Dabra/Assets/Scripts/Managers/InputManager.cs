@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using XInputDotNetPure; // Required in C#
 
 public class InputManager : MonoBehaviour {
@@ -9,9 +10,31 @@ public class InputManager : MonoBehaviour {
         PlayerIndex playerIndex;
         GamePadState state;
         GamePadState prevState;
+        [HideInInspector]public PauseMenuHandler pauseMenuHandler;
 	// Use this for initialization
+
+    void Awake()
+    {
+        if (GameObject.FindGameObjectsWithTag("InputManager").Length > 1)
+		{
+			Destroy(this.gameObject);
+		}
+
+		DontDestroyOnLoad(this);
+    }
 	void Start () {
 		if (!player)
+        {
+            var go = GameObject.FindGameObjectWithTag("Player");
+            if (go)
+                player = go.GetComponent<Player>();
+        }
+		SceneManager.sceneLoaded += OnLevelFinishedLoading;
+	}
+
+	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+	{
+        if (!player)
         {
             var go = GameObject.FindGameObjectWithTag("Player");
             if (go)
@@ -23,6 +46,7 @@ public class InputManager : MonoBehaviour {
     {
         // Find a PlayerIndex, for a single player game
         // Will find the first controller that is connected ans use it
+
         if (!playerIndexSet || !prevState.IsConnected)
         {
             for (int i = 0; i < 4; ++i)
@@ -40,7 +64,12 @@ public class InputManager : MonoBehaviour {
 
         prevState = state;
         state = GamePad.GetState(playerIndex);
-        player.HandleInput(state, prevState);
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            player.HandleInput(state, prevState);
+            pauseMenuHandler.HandleInput(state, prevState);
+        }
+
     }
 
 }

@@ -1590,7 +1590,7 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 1
   buffTime: 0.1
-  attackSound: event:/Weapon BasicMagic
+  attackSound: event:/Weapon BasicMagic Enemy Bat
   layersOfEffect:
     serializedVersion: 2
     m_Bits: 512

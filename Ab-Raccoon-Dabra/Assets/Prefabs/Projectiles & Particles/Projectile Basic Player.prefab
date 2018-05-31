@@ -186,6 +186,7 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 0
   buffTime: 0
+  projectileHitSound: event:/Projectile destroyEffect
 --- !u!135 &135862020365715554
 SphereCollider:
   m_ObjectHideFlags: 1
