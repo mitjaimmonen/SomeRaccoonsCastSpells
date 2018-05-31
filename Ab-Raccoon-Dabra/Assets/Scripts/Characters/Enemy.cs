@@ -89,7 +89,7 @@ public class Enemy : Character
     {
         if (!iceBuff && !stunBuff && target)
             navMeshAgent.SetDestination(target.position);
-        else
+       else
             navMeshAgent.SetDestination(transform.position);
 
     }

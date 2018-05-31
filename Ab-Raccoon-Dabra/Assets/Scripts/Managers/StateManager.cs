@@ -10,7 +10,7 @@ public class StateManager : MonoBehaviour
     private int enemiesSpawnedOverall;
     private int batsSpawned;
     private int molesSpawned;
-    public GameObject moleToSpawn;
+    public GameObject[] moleToSpawn;
     public GameObject batToSpawn;
 
     [SerializeField]
@@ -145,11 +145,13 @@ public class StateManager : MonoBehaviour
     {
         for (int i = 0; i < value; i++)
         {
+            int randomType = Random.Range(0, moleToSpawn.Length);
             int randomPosition = Random.Range(0, moleSpawnPositions.Length);
-            moleToSpawn.GetComponent<Enemy>().target = playerPos.transform;
-            moleToSpawn.GetComponent<Enemy>().gameBoss = GetComponent<LevelManager>();
+            GameObject temp = moleToSpawn[randomType];
+           temp.GetComponent<Enemy>().target = playerPos.transform;
+            temp.GetComponent<Enemy>().gameBoss = GetComponent<LevelManager>();
 
-            Instantiate(moleToSpawn, moleSpawnPositions[randomPosition].position, moleSpawnPositions[randomPosition].rotation);
+            Instantiate(temp, moleSpawnPositions[randomPosition].position, moleSpawnPositions[randomPosition].rotation);
             spawnCounter = 0;
             molesSpawned++;
             enemiesSpawnedThisWave++;

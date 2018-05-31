@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: 644df29d559781a468034d9070b12174
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bush
+    100002: DeadTree
+    100004: FirTree
+    100006: GraveCross
+    100008: GraveFence
+    100010: Gravestone
+    100012: Hedge
+    100014: LeafPile
+    100016: //RootNode
+    100018: Raccoon
+    100020: Tree
+    100022: TreeTrunk
+    400000: Bush
+    400002: DeadTree
+    400004: FirTree
+    400006: GraveCross
+    400008: GraveFence
+    400010: Gravestone
+    400012: Hedge
+    400014: LeafPile
+    400016: //RootNode
+    400018: Raccoon
+    400020: Tree
+    400022: TreeTrunk
+    2100000: WoodDark
+    2100002: LightStone
+    2100004: Stone
+    2100006: LeafRed
+    2100008: LeafDarkRed
+    2100010: Orange
+    2100012: YellowDark
+    2100014: LeafYellow
+    2100016: LightDarkGreen
+    2100018: DarkGreen
+    2100020: Material_001
+    2100022: BushGreen
+    2100024: Wood
+    2100026: GreyFur__otter_robe_uv
+    2100028: LightGreyFur__otter_robe_uv
+    2100030: WhiteFur__otter_robe_uv
+    2100032: BlackFur__otter_robe_uv
+    2100034: Nose__otter_robe_uv
+    2300000: Bush
+    2300002: DeadTree
+    2300004: FirTree
+    2300006: GraveCross
+    2300008: GraveFence
+    2300010: Gravestone
+    2300012: Hedge
+    2300014: LeafPile
+    2300016: Raccoon
+    2300018: Tree
+    2300020: TreeTrunk
+    3300000: Bush
+    3300002: DeadTree
+    3300004: FirTree
+    3300006: GraveCross
+    3300008: GraveFence
+    3300010: Gravestone
+    3300012: Hedge
+    3300014: LeafPile
+    3300016: Raccoon
+    3300018: Tree
+    3300020: TreeTrunk
+    4300000: DeadTree
+    4300002: GraveFence
+    4300004: LeafPile
+    4300006: GraveCross
+    4300008: FirTree
+    4300010: Tree
+    4300012: TreeTrunk
+    4300014: Hedge
+    4300016: Gravestone
+    4300018: Bush
+    4300020: Raccoon
+    7400000: Default Take
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
