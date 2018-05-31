@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{34fffaf4-2ea8-4354-afe4-9a3474f7242f}">
+        <property name="assetPath">
+            <value>smash5.mp3</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.966530612244898</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{91bc22eb-27c6-48a8-a795-488148c253c4}</destination>
+        </relationship>
+    </object>
+</objects>

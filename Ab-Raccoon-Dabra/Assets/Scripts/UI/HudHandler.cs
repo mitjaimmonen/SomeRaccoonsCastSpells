@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class HudHandler : MonoBehaviour
 {
     public Text timerText;
+    public Text waveNumberText;
+    public Text scoreText;
     public Text spellnameText;
     public Slider spellTimeSlider;
     public Slider healthbarSlider;
@@ -44,6 +46,8 @@ public class HudHandler : MonoBehaviour
         }
 
         timerText.text = "Next wave in: " + levelBoss.TimerForDisplay().ToString("f0");
+        scoreText.text = "Score: " + levelBoss.ScoreForDisplay().ToString("f0");
+        waveNumberText.text = "Wave: " + (levelBoss.WaveNumberForScore() +1);
         spellTimeSlider.value = player.weapons[player.EquippedSpell].CooldownTime;
     }
 

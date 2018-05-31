@@ -53,13 +53,19 @@ public class Weapon : MonoBehaviour {
 			
 	}
 
-	public virtual void TryAttack()
+	public virtual void TryAttack(AnimControl anim, int type)
 	{
 		//attack in overrides		
 		if (fireRateTimer > Time.time - fireRate)
 			return;
 		
 		fireRateTimer = Time.time;
+        if (type == 0)
+        {
+            anim.PlayAttackAnimation();
+        }
+        else
+            anim.PlaySpellAnimation();
 		Attack();
 	}
 

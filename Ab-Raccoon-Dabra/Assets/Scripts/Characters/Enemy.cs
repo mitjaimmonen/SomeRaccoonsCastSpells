@@ -45,19 +45,14 @@ public class Enemy : Character
                 attackDelayTimer = Time.time;
                 timerReset = true;
             }
-            
-            //is in range to attack & timer is over attackDelay
-            return canAttack;
         }
         else
         {
             canAttack = false;
             timerReset = false;
-            return canAttack;
-
         }
-
-
+        
+        return canAttack;
     }
 
     public bool CanSeeTarget()
@@ -75,6 +70,8 @@ public class Enemy : Character
     private void Awake()
     {
         health = new Health(maxHealth);
+
+        animControl = new AnimControl(GetComponentInChildren<Animator>());
     }
 
     private void Start()
@@ -122,5 +119,8 @@ public class Enemy : Character
         gameBoss.EnemyDeath(scoreWorth);
         base.DIE();
     }
+
+
+
 
 }

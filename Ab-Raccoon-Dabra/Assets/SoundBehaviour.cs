@@ -41,7 +41,7 @@ public class SoundBehaviour : MonoBehaviour {
 					player = temp.GetComponentInChildren<Player>();
 			}
 			musicEI.setParameterValue("isGame", SceneManager.GetActiveScene().buildIndex == 1 ? 1 : 0);
-			musicEI.setParameterValue("Master", 0.8f);
+			musicEI.setParameterValue("Master", 0.7f);
 			if (player)
 				musicEI.setParameterValue("isAlive", player.IsAlive ? 1 : 0);
 

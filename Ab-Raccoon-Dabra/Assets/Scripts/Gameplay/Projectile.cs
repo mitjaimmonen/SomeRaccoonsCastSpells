@@ -14,6 +14,9 @@ public class Projectile : MonoBehaviour {
 	public float destroyEffectMultiplier;
 	public bool iceBuff = false, stunBuff = false;
 	public float buffTime;
+	[FMODUnity.EventRef, Tooltip("When projectile collides with enemy.")] public string projectileHitSound;
+
+
 	private GameObject particleSystemGo;
 
 	private Vector3 startPos;
@@ -48,6 +51,7 @@ public class Projectile : MonoBehaviour {
 			enemy = other.gameObject.GetComponentInParent<Character>();
 		if (enemy)
 		{
+			FMODUnity.RuntimeManager.PlayOneShot(projectileHitSound, enemy.transform.position);
 			enemy.AddBuff(iceBuff, stunBuff, buffTime);
 			enemy.GetHit(damage);
 			DestroyProjectile();

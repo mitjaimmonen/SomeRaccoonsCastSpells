@@ -10,9 +10,11 @@ public class Character : MonoBehaviour
 
     public Weapon[] weapons;
     [SerializeField] protected float maxHealth;
-    [FMODUnity.EventRef] public string explosionSound;
-    [FMODUnity.EventRef] public string damageSound;
+    [FMODUnity.EventRef, Tooltip("If player explodes")] public string explosionSound;
+    [FMODUnity.EventRef, Tooltip("Ouch-sound")] public string damageSound;
     [FMODUnity.EventRef] public string deathSound;
+
+    protected AnimControl animControl;
 
     protected int equippedSpell = 1;
     protected Health health;
@@ -24,10 +26,10 @@ public class Character : MonoBehaviour
 
     public int EquippedSpell
     {
-        get {return equippedSpell;}
+        get { return equippedSpell; }
         set
-        { 
-            if (value > weapons.Length-1 || value < 1)
+        {
+            if (value > weapons.Length - 1 || value < 1)
                 equippedSpell = 1;
             else
                 equippedSpell = value;
@@ -52,7 +54,8 @@ public class Character : MonoBehaviour
     }
     public void Attack(int equippedSpell)
     {
-      weapons[equippedSpell].TryAttack();
+        weapons[equippedSpell].TryAttack(animControl, equippedSpell);
+
     }
 
 
@@ -68,7 +71,7 @@ public class Character : MonoBehaviour
         stunBuff = addStunBuff;
         buffTime = time;
         StartCoroutine(HandleBuff(addIceBuff, addStunBuff));
-        
+
     }
     IEnumerator HandleBuff(bool ice, bool stun)
     {
@@ -77,14 +80,45 @@ public class Character : MonoBehaviour
             iceBuff = false;
         if (stun)
             stunBuff = false;
-            
+
         yield break;
-            
+
     }
 
     public void GetHit(float dmgValue)
     {
-        //take damage, stagger and such
+
+        if (health.isAlive())
+        {
+            animControl.PlayHurtAnimation();
+            FMODUnity.RuntimeManager.PlayOneShot(damageSound, transform.position);
+        }
+
+        health.TakeDamage(dmgValue);
+
+        if (takeDamageParticles)
+        {
+            Quaternion rot = transform.rotation;
+            rot.y = Random.Range(0,360);
+            GameObject temp = Instantiate(takeDamageParticles, transform.position, rot);
+            Destroy(temp, 2f);
+        }
+
+
+
+
+        if (!health.isAlive())
+            DIE();
+        
+    }
+    public void GetHit(float dmgValue, bool explosion)
+    {
+        if (health.isAlive())
+        {
+            animControl.PlayHurtAnimation();
+            FMODUnity.RuntimeManager.PlayOneShot(damageSound, transform.position);
+        }
+
         health.TakeDamage(dmgValue);
         if (takeDamageParticles)
         {
@@ -94,22 +128,6 @@ public class Character : MonoBehaviour
             Destroy(temp, 2f);
         }
 
-        if (!health.isAlive())
-        {
-            DIE();
-        }
-    }
-    public void GetHit(float dmgValue, bool explosion)
-    {
-        //take damage, stagger and such
-        health.TakeDamage(dmgValue);
-        if (takeDamageParticles)
-        {
-            Quaternion rot = transform.rotation;
-            rot.y = Random.Range(0,360);
-            GameObject temp = Instantiate(takeDamageParticles, transform.position, rot);
-            Destroy(temp, 2f);
-        }
 
         if (!health.isAlive())
         {
@@ -133,7 +151,6 @@ public class Character : MonoBehaviour
             }
             else if (deathParticles)
             {
-                FMODUnity.RuntimeManager.PlayOneShot(damageSound, transform.position);
                 GameObject temp = Instantiate(deathParticles, transform.position, transform.rotation);
                 Destroy(temp, 2f);
             }

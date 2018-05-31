@@ -9,6 +9,8 @@ public class Weapon_BasicMelee : Weapon {
 	[Tooltip("Is damage check done in middle of character or in front of it. 0 affects all surroundings, 1 affects only front")]
 	public float forwardMultiplier;
 
+	[FMODUnity.EventRef] public string attackHitSound;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,6 +19,7 @@ public class Weapon_BasicMelee : Weapon {
 	{
 		base.Attack();
 
+		FMODUnity.RuntimeManager.PlayOneShot(attackSound, transform.position);
 
 		Collider[] enemyHits = Physics.OverlapSphere(transform.position + transform.forward*forwardMultiplier, damageRadius, layersOfEffect);
 			Debug.Log("BasicMelee, " + damage + ", enemyhits: " + enemyHits);
@@ -27,16 +30,16 @@ public class Weapon_BasicMelee : Weapon {
 			if (!enemy)
 				enemy = hit.GetComponentInParent<Character>();
 			
+			Invoke("PlayHitSound", Random.Range(0,0.1f));
 			enemy.AddBuff(iceBuff, stunBuff, buffTime);
 			enemy.GetHit(damage);
 
 		}
+	}
 
-		//Start Coroutine for the time of destroyTime
-		//Sphere check for enemy
-		//Give damage to affected
-		//End coroutine after destroyTimer is full
-
+	void PlayHitSound()
+	{
+		FMODUnity.RuntimeManager.PlayOneShot(attackHitSound, transform.position);
 	}
 	
 }

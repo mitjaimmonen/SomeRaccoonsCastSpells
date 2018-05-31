@@ -1,15 +1,19 @@
 {ceea3ae3-96a1-4734-bc22-13346d53a16d} event:/Background Music
-{1e7f034b-0ba3-44ca-9295-ad66d356b418} event:/Weapon Spell Eruption Icicle create
-{978f19f2-06e2-44f6-a3af-88c45b50a5fe} event:/Weapon Spell Blast
-{b202bdf0-3d47-4a64-8b34-5bbc90a7cbc4} event:/Weapon Spell Lightning
-{f0af1e51-7d40-4378-ac69-03a6b2400256} event:/Weapon BasicMagic
-{0b867a20-7c6f-4e50-aaa1-e0740261e6d6} event:/Projectile destroyEffect
-{490c3a04-b825-4caf-951d-170506ad772f} event:/Projectile Blast
-{57e27fca-f049-47c6-b38e-eff1f658ed88} event:/Character explosion
-{2c6d18e7-7e2e-4205-be36-0c95502a6afa} event:/Character Damage
-{21d5447c-bc0d-4e26-b852-b9610ceb856f} event:/Character Mole death
 {10899ce6-c360-4985-acc9-a842d52cb797} event:/Character Bat death
+{2c6d18e7-7e2e-4205-be36-0c95502a6afa} event:/Character Bat Damage
+{21d5447c-bc0d-4e26-b852-b9610ceb856f} event:/Character Mole death
+{59dfdb29-1a25-4145-bb05-b3c99041d114} event:/Character Mole Damage
+{41aaf141-9ee5-4c68-921b-85b46167dddf} event:/Character Player Damage
 {3626cf82-ab33-4fc0-893c-7b2d4f00fe8c} event:/Character Player death
+{57e27fca-f049-47c6-b38e-eff1f658ed88} event:/Character explosion
+{490c3a04-b825-4caf-951d-170506ad772f} event:/Projectile Blast
+{0b867a20-7c6f-4e50-aaa1-e0740261e6d6} event:/Projectile destroyEffect
+{f0af1e51-7d40-4378-ac69-03a6b2400256} event:/Weapon BasicMagic
+{978f19f2-06e2-44f6-a3af-88c45b50a5fe} event:/Weapon Spell Blast
+{1e7f034b-0ba3-44ca-9295-ad66d356b418} event:/Weapon Spell Eruption Icicle create
+{b202bdf0-3d47-4a64-8b34-5bbc90a7cbc4} event:/Weapon Spell Lightning
+{9bd10cbc-238e-4c74-8975-5b54113edf88} event:/Weapon BasicMelee
+{48cec694-9c94-427c-852f-7f50ccdf896b} event:/Weapon BasicMeleeHit
 {3a954dc6-825a-461c-a014-49fe126b8da4} bus:/
 {7bb39c20-d9da-4eae-9ed1-50245ebdbd96} bus:/Reverb
 {4622f3a0-1069-4f8c-ad4e-0f0dc1436efc} bank:/Master Bank

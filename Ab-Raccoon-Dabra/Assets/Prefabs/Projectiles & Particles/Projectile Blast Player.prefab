@@ -185,6 +185,7 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 0
   buffTime: 0
+  projectileHitSound: 
   blastSound: event:/Projectile Blast
   blastMultiplier: 0
   blastParticles: {fileID: 198790685053897456, guid: d6a483257a8eb874398cad8b2224d4f5,

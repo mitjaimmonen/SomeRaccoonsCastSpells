@@ -17,6 +17,16 @@ public class LevelManager : MonoBehaviour
         return stateManager.TimerForDisplay() + 1;
     }
 
+    public float ScoreForDisplay()
+    {
+        return scoreManager.GetScore();
+    }
+
+    public int WaveNumberForScore()
+    {
+        return stateManager.currentWave.waveNumber;
+    }
+
 
     private void Awake()
     {
@@ -28,7 +38,7 @@ public class LevelManager : MonoBehaviour
     }
 
     void Update()
-    {       
+    {
         ManageWaves();
 
     }
@@ -51,5 +61,5 @@ public class LevelManager : MonoBehaviour
         stateManager.enemiesKilled++;
 
     }
-        
+
 }
