@@ -12,75 +12,31 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114902463531096084}
-  - {fileID: 114856984546769936}
+  - {fileID: 114863113854344542}
+  - {fileID: 114173818587954586}
   EditorEvents:
-  - {fileID: 114918507576871568}
-  - {fileID: 114043951079884318}
-  - {fileID: 114103527955639078}
-  - {fileID: 114885634345377200}
-  - {fileID: 114376996099998960}
-  - {fileID: 114838359750560696}
-  - {fileID: 114997687581398516}
-  - {fileID: 114102607853579258}
-  - {fileID: 114893440978858260}
-  - {fileID: 114197929886338124}
-  - {fileID: 114329536953760450}
-  - {fileID: 114983738127345200}
-  - {fileID: 114002813639162774}
-  - {fileID: 114917361917086286}
-  - {fileID: 114318831580022918}
-  - {fileID: 114492673510096446}
-  - {fileID: 114110144291392984}
-  MasterBankRef: {fileID: 114856984546769936}
-  StringsBankRef: {fileID: 114902463531096084}
-  stringsBankWriteTime: 636634450794510817
+  - {fileID: 114585151302958090}
+  - {fileID: 114022485409399812}
+  - {fileID: 114463918197370206}
+  - {fileID: 114421081846837740}
+  - {fileID: 114253814142746376}
+  - {fileID: 114390417478298914}
+  - {fileID: 114387207931979276}
+  - {fileID: 114655936296657838}
+  - {fileID: 114878984878583720}
+  - {fileID: 114130370131892484}
+  - {fileID: 114525177872603980}
+  - {fileID: 114510777671932666}
+  - {fileID: 114409922001373544}
+  - {fileID: 114206622549757152}
+  - {fileID: 114102337032459452}
+  - {fileID: 114579452961286796}
+  - {fileID: 114808614649406422}
+  MasterBankRef: {fileID: 114173818587954586}
+  StringsBankRef: {fileID: 114863113854344542}
+  stringsBankWriteTime: 636634477067225857
   cacheVersion: 2
---- !u!114 &114002813639162774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Background Music
-  guid: e33aeacea1963447bc2213346d53a16d
-  Banks:
-  - {fileID: 114856984546769936}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114375784847236800}
-  - {fileID: 114444928391109156}
-  - {fileID: 114471098505171014}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 270093
---- !u!114 &114024512368742134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\Laptop\Documents\Git\SomeRaccoonsCastSpells\Ab-Raccoon-Dabra\Assets\FMOD\Project\Build\Desktop\Master
-    Bank.bank
-  lastModified: 636634059075608758
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 5871104
-  Exists: 1
---- !u!114 &114043951079884318
+--- !u!114 &114022485409399812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -94,7 +50,7 @@ MonoBehaviour:
   Path: event:/Weapon BasicMagic Enemy Bat
   guid: 1642c8a0cb8cbc42a94f3cb9d4672b06
   Banks:
-  - {fileID: 114856984546769936}
+  - {fileID: 114173818587954586}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -102,144 +58,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 522
---- !u!114 &114102607853579258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Character Mole Death
-  guid: 7c44d5210dbc264eb852b9610ceb856f
-  Banks:
-  - {fileID: 114856984546769936}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 720
---- !u!114 &114103527955639078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Projectile destroyEffect
-  guid: 207a860b6f7c504eaaa1e0740261e6d6
-  Banks:
-  - {fileID: 114856984546769936}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 520
---- !u!114 &114110144291392984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Weapon Spell Blast
-  guid: f2198f97e206f644a3af88c45b50a5fe
-  Banks:
-  - {fileID: 114856984546769936}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 490
---- !u!114 &114122728835868180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Master
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114160351268828766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\Andromeda\Documents\SomeRaccoonsCastSpells\Ab-Raccoon-Dabra\Assets\FMOD\Project\Build\Desktop\Master
-    Bank.bank
-  lastModified: 636634076792849089
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 5871104
-  Exists: 0
---- !u!114 &114197929886338124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Weapon BasicMeleeHit
-  guid: 94c6ce48949c7c42852f7f50ccdf896b
-  Banks:
-  - {fileID: 114856984546769936}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 760
---- !u!114 &114240563360146506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: isAlive
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114318831580022918
+--- !u!114 &114102337032459452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -253,7 +72,7 @@ MonoBehaviour:
   Path: event:/Character Bat damage
   guid: e7186d2c2e7e0542be360c95502a6afa
   Banks:
-  - {fileID: 114856984546769936}
+  - {fileID: 114173818587954586}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -261,7 +80,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 130
---- !u!114 &114329536953760450
+--- !u!114 &114130370131892484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -272,174 +91,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Weapon BasicMelee Enemy Mole
-  guid: bc0cd19b8e23744c89755b54113edf88
+  Path: event:/Weapon BasicMeleeHit
+  guid: 94c6ce48949c7c42852f7f50ccdf896b
   Banks:
-  - {fileID: 114856984546769936}
+  - {fileID: 114173818587954586}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 574
---- !u!114 &114375784847236800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: isGame
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114376996099998960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Character Player Damage
-  guid: 41f1aa41e59e684c921b85b46167dddf
-  Banks:
-  - {fileID: 114856984546769936}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 660
---- !u!114 &114432019502596496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: isAlive
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114444928391109156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: isAlive
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114471098505171014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Master
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114492673510096446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Weapon Spell Lightning
-  guid: f0bd02b2473d644a8b345bbc90a7cbc4
-  Banks:
-  - {fileID: 114856984546769936}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &114534481617465064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: isGame
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114720444684038268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Master
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114838359750560696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Weapon Spell Eruption Icicle create
-  guid: 4b037f1ea30bca449295ad66d356b418
-  Banks:
-  - {fileID: 114856984546769936}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1277
---- !u!114 &114856984546769936
+  Length: 760
+--- !u!114 &114173818587954586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -450,77 +113,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: C:\Users\c4arodri.WPK\Documents\SomeRaccoonsCastSpells\Ab-Raccoon-Dabra\Assets\FMOD\Project\Build\Desktop\Master
+  Path: C:\Users\Laptop\Documents\Git\SomeRaccoonsCastSpells\Ab-Raccoon-Dabra\Assets\FMOD\Project\Build\Desktop\Master
     Bank.bank
-  lastModified: 636634450795232725
+  lastModified: 636634497617356446
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 5871104
   Exists: 1
---- !u!114 &114885634345377200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Character Mole Damage
-  guid: 29dbdf59251a4541bb05b3c99041d114
-  Banks:
-  - {fileID: 114856984546769936}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 230
---- !u!114 &114893440978858260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Character Player Death
-  guid: 82cf263633abc04f893c7b2d4f00fe8c
-  Banks:
-  - {fileID: 114856984546769936}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 6504
---- !u!114 &114902463531096084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: Assets\FMOD\Project\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636634450794510817
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1542
-  Exists: 1
---- !u!114 &114917361917086286
+--- !u!114 &114206622549757152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -534,7 +135,7 @@ MonoBehaviour:
   Path: event:/Character Bat death
   guid: e69c891060c38549acc9a842d52cb797
   Banks:
-  - {fileID: 114856984546769936}
+  - {fileID: 114173818587954586}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -542,7 +143,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 325
---- !u!114 &114918507576871568
+--- !u!114 &114253814142746376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -553,62 +154,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: event:/Projectile Blast
-  guid: 043a0c4925b8af4c951d170506ad772f
+  Path: event:/Character Player Damage
+  guid: 41f1aa41e59e684c921b85b46167dddf
   Banks:
-  - {fileID: 114856984546769936}
+  - {fileID: 114173818587954586}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1384
---- !u!114 &114983738127345200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Character explosion
-  guid: ca7fe25749f0c647b38eeff1f658ed88
-  Banks:
-  - {fileID: 114856984546769936}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1200
---- !u!114 &114997687581398516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/Weapon BasicMagic Player
-  guid: 511eaff0407d7843ac6903a6b2400256
-  Banks:
-  - {fileID: 114856984546769936}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 275
---- !u!114 &114998016860757532
+  Length: 660
+--- !u!114 &114335000130084746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -623,3 +180,318 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114387207931979276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Weapon BasicMagic Player
+  guid: 511eaff0407d7843ac6903a6b2400256
+  Banks:
+  - {fileID: 114173818587954586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 275
+--- !u!114 &114390417478298914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Weapon Spell Eruption Icicle create
+  guid: 4b037f1ea30bca449295ad66d356b418
+  Banks:
+  - {fileID: 114173818587954586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1277
+--- !u!114 &114409922001373544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Background Music
+  guid: e33aeacea1963447bc2213346d53a16d
+  Banks:
+  - {fileID: 114173818587954586}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114335000130084746}
+  - {fileID: 114584958275739368}
+  - {fileID: 114708283524271726}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 270093
+--- !u!114 &114421081846837740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Character Mole Damage
+  guid: 29dbdf59251a4541bb05b3c99041d114
+  Banks:
+  - {fileID: 114173818587954586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 230
+--- !u!114 &114463918197370206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Projectile destroyEffect
+  guid: 207a860b6f7c504eaaa1e0740261e6d6
+  Banks:
+  - {fileID: 114173818587954586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 520
+--- !u!114 &114510777671932666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Character explosion
+  guid: ca7fe25749f0c647b38eeff1f658ed88
+  Banks:
+  - {fileID: 114173818587954586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1200
+--- !u!114 &114525177872603980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Weapon BasicMelee Enemy Mole
+  guid: bc0cd19b8e23744c89755b54113edf88
+  Banks:
+  - {fileID: 114173818587954586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 574
+--- !u!114 &114579452961286796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Weapon Spell Lightning
+  guid: f0bd02b2473d644a8b345bbc90a7cbc4
+  Banks:
+  - {fileID: 114173818587954586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &114584958275739368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: isAlive
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114585151302958090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Projectile Blast
+  guid: 043a0c4925b8af4c951d170506ad772f
+  Banks:
+  - {fileID: 114173818587954586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1384
+--- !u!114 &114655936296657838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Character Mole Death
+  guid: 7c44d5210dbc264eb852b9610ceb856f
+  Banks:
+  - {fileID: 114173818587954586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 720
+--- !u!114 &114708283524271726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Master
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114808614649406422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Weapon Spell Blast
+  guid: f2198f97e206f644a3af88c45b50a5fe
+  Banks:
+  - {fileID: 114173818587954586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 490
+--- !u!114 &114863113854344542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Assets\FMOD\Project\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636634477067225857
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1542
+  Exists: 1
+--- !u!114 &114878984878583720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Character Player Death
+  guid: 82cf263633abc04f893c7b2d4f00fe8c
+  Banks:
+  - {fileID: 114173818587954586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6504

@@ -34,3 +34,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+Ab-Raccoon-Dabra/fmod\.log
+
+Ab-Raccoon-Dabra/fmod_editor\.log
