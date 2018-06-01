@@ -58,6 +58,7 @@ public class LevelManager : MonoBehaviour
     {
         //called by enemy OnDestroy(), adds to score and stateManager.enemiesKilled
         scoreManager.AddToScore(scoreValue);
+        scoreManager.KilledEnemy();
         stateManager.enemiesKilled++;
 
     }

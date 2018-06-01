@@ -9,6 +9,8 @@ public class HudHandler : MonoBehaviour
     public Text waveNumberText;
     public Text scoreText;
     public Text spellnameText;
+    public Text scoreBonusText;
+    public Text scoreTimerText;
     public Slider spellTimeSlider;
     public Slider healthbarSlider;
     public LevelManager levelBoss;
@@ -47,8 +49,29 @@ public class HudHandler : MonoBehaviour
 
         timerText.text = "Next wave in: " + levelBoss.TimerForDisplay().ToString("f0");
         scoreText.text = "Score: " + levelBoss.ScoreForDisplay().ToString("f0");
-        waveNumberText.text = "Wave: " + (levelBoss.WaveNumberForScore() +1);
+        waveNumberText.text = "Wave: " + (levelBoss.WaveNumberForScore() + 1);
         spellTimeSlider.value = player.weapons[player.EquippedSpell].CooldownTime;
+
+        if (levelBoss.scoreManager.GetScoreBonus() > 1)
+        {
+            if (levelBoss.scoreManager.GetScoreBonus() % 1 == 0)
+            {
+                scoreTimerText.text = levelBoss.scoreManager.GetScoreTimer().ToString("f0");
+                scoreBonusText.text = "x" + levelBoss.scoreManager.GetScoreBonus().ToString("f0");
+            }
+            else
+            {
+                scoreTimerText.text = levelBoss.scoreManager.GetScoreTimer().ToString("f0");
+                scoreBonusText.text = "x" + levelBoss.scoreManager.GetScoreBonus().ToString("f1");
+            }
+
+        }
+
+        else
+        {
+            scoreTimerText.text = " ";
+            scoreBonusText.text = " ";
+        }
     }
 
 }

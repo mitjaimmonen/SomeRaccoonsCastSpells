@@ -7,9 +7,9 @@ public class MenuController : MonoBehaviour {
 
     public Animator transitionAnim;
     public int gameScene;
-  
 
-   public void StartGame()
+ 
+    public void StartGame()
     {
         StartCoroutine(LoadScene());
     }
@@ -22,7 +22,7 @@ public class MenuController : MonoBehaviour {
     IEnumerator LoadScene()
     {
         transitionAnim.SetTrigger("fade");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.3f);
         SceneManager.LoadScene(gameScene);
     }
 }
