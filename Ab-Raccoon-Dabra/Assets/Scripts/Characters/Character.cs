@@ -67,6 +67,8 @@ public class Character : MonoBehaviour
 
     public void AddBuff(bool addIceBuff, bool addStunBuff, float time)
     {
+        if (iceBuff || stunBuff)
+            return;
         iceBuff = addIceBuff;
         stunBuff = addStunBuff;
         buffTime = time;

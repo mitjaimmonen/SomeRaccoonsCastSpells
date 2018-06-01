@@ -21,6 +21,7 @@ public class Weapon : MonoBehaviour {
 	protected bool isOnCooldown = false;
 
 	protected float fireRateTimer = -10f;
+	protected CameraShake shake;
 	
 
 
@@ -50,6 +51,9 @@ public class Weapon : MonoBehaviour {
 
 		if (!characterTrans)
 			Debug.LogWarning("No characterTransform!");
+
+		shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<CameraShake>();
+		
 			
 	}
 

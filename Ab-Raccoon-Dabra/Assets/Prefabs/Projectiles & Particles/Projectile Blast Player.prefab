@@ -185,7 +185,7 @@ MonoBehaviour:
   iceBuff: 0
   stunBuff: 0
   buffTime: 0
-  projectileHitSound: 
+  projectileHitSound: event:/Projectile destroyEffect
   blastSound: event:/Projectile Blast
   blastMultiplier: 0
   blastParticles: {fileID: 198790685053897456, guid: d6a483257a8eb874398cad8b2224d4f5,
@@ -281,9 +281,9 @@ ParticleSystem:
     enabled: 1
     startLifetime:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.5
-      minScalar: 5
+      minMaxState: 3
+      scalar: 1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -853,7 +853,7 @@ ParticleSystem:
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 0
     sphericalDirectionAmount: 0
-    randomPositionAmount: 0.075
+    randomPositionAmount: 0.1
     radius:
       value: 0.01
       mode: 0
@@ -4807,8 +4807,8 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e8c1e2cd9d0cb764a9da14eaa7ba68f4, type: 2}
+  - {fileID: 2100000, guid: e8c1e2cd9d0cb764a9da14eaa7ba68f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

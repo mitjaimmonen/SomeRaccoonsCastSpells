@@ -116,14 +116,14 @@ public class Player : Character
     {
         Vector3 directionInWorldSpace = transform.InverseTransformDirection(transform.forward);
      
-        if (directionInWorldSpace.x < 0)
-            Debug.Log("Facing Left");
-        if (directionInWorldSpace.x > 0)
-            Debug.Log("Facing Right");
-        if (transform.rotation.eulerAngles.y  > 90 && transform.rotation.eulerAngles.y < 270)
-            Debug.Log("Facing Back");
-       else
-            Debug.Log("Facing Forward");
+        // if (directionInWorldSpace.x < 0)
+        //     Debug.Log("Facing Left");
+        // if (directionInWorldSpace.x > 0)
+        //     Debug.Log("Facing Right");
+        // if (transform.rotation.eulerAngles.y  > 90 && transform.rotation.eulerAngles.y < 270)
+        //     Debug.Log("Facing Back");
+    //    else
+            // Debug.Log("Facing Forward");
     }
 
     public bool FacingLeft()

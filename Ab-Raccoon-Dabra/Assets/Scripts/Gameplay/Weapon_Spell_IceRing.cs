@@ -12,6 +12,9 @@ public class Weapon_Spell_IceRing : Weapon_Spell {
 	{
 		base.Attack();
 
+		if (shake)
+			shake.StartShake(1f,0.75f,2f,0);
+
 		Vector3 temppos = characterTrans.position;
 		temppos.y -= characterTrans.GetComponentInChildren<Player>().playerCollider.height/2;
 		GameObject tempIcicleGo = Instantiate(icicleEruptionPrefab, temppos, characterTrans.rotation);

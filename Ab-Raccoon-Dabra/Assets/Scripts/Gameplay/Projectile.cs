@@ -16,6 +16,7 @@ public class Projectile : MonoBehaviour {
 	public float buffTime;
 	[FMODUnity.EventRef, Tooltip("When projectile collides with enemy.")] public string projectileHitSound;
 
+	protected CameraShake shake;
 
 	private GameObject particleSystemGo;
 

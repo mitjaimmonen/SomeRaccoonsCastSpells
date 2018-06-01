@@ -1985,7 +1985,7 @@ MonoBehaviour:
   spellName: Fire Blast
   blastDamage: 40
   range: 15
-  projectileSpeed: 8
+  projectileSpeed: 20
   projectileSizeMultiplier: 4
   projectileBlastMultiplier: 7
   projectilePrefab: {fileID: 1664009920811592, guid: 06817976b86dc994b968d195352bc544,

@@ -2727,7 +2727,7 @@ ParticleSystem:
     separateAxes: 0
     frequency: 3
     damping: 0
-    octaves: 2
+    octaves: 4
     octaveMultiplier: 1
     octaveScale: 2
     quality: 2

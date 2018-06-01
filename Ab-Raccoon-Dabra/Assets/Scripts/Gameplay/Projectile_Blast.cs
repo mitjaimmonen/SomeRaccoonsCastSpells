@@ -9,8 +9,12 @@ public class Projectile_Blast : Projectile {
 	public ParticleSystem blastParticles;
 	public float blastDamage;
 
+
 	protected override void DestroyProjectile()
 	{
+		shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<CameraShake>();
+		if (shake)
+			shake.StartShake(blastMultiplier/2f,0.75f, 2f, 0.05f);
 		//Spawn explosion
 		GameObject temp = Instantiate(blastParticles, transform.position, transform.rotation).gameObject;
 		temp.transform.localScale *= blastMultiplier;

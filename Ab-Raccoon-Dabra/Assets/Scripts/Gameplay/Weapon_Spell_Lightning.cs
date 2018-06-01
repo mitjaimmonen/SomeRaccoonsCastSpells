@@ -35,6 +35,8 @@ public class Weapon_Spell_Lightning : Weapon_Spell {
 		List<Collider> hits = new List<Collider>();
 		//Check all affected enemies with sphere checks
 		// RaycastHit hit;
+		if (shake)
+			shake.StartShake(1f,0.9f, 3f, 0.05f);
 
 		GameObject temp = Instantiate(lightningParticles, transform.position, characterTrans.rotation);
 		Destroy(temp, 2f);
