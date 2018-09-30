@@ -1,14 +1,16 @@
 fileFormatVersion: 2
 guid: b0ca5eff64273594fa880dcf377233b4
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
     2100000: 01 - Default
+    2100002: No Name
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cone001
+    4300002: Cone002
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -65,6 +67,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
